@@ -7,7 +7,7 @@ As rodas (ou esteiras) são essenciais em robôs de sumô — são elas que tran
 ## 🔍 O que buscar em uma roda:
 
 - **Coeficiente de atrito**  
-  Quanto maior o atrito entre o pneu e o chão, maior a força máxima do robô.
+  Quanto maior o atrito entre o pneu e o chão, maior a força máxima do robô.  
 
   $$
   F \leq N_{\text{rodas}} \mu_{\text{estático}} \quad \text{(sem derrapagem)}
@@ -20,12 +20,13 @@ As rodas (ou esteiras) são essenciais em robôs de sumô — são elas que tran
 - **Diâmetro da roda**  
   Rodas menores aumentam a força transmitida ao solo, aproveitando melhor o torque dos motores. Por outro lado, reduzem a velocidade máxima.  
 
-  $$
-  F = \frac{\tau_{\text{motor}}}{r_{\text{roda}}}
-  $$
-  $$
-  v = r_{\text{roda}} \cdot \omega_{\text{motor}}
-  $$
+$$
+F = \frac{\tau_{\text{motor}}}{r_{\text{roda}}}
+$$
+
+$$
+v = r_{\text{roda}} \cdot \omega_{\text{motor}}
+$$
 
 - **Largura**  
   As rodas para mini sumo devem ser largas para ajudar a distribuir a força pela seção transversal do pneu, evitando que ele venha a romper.
