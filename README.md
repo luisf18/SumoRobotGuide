@@ -352,19 +352,112 @@ ESPNOW é um protocolo de comunicação remota em 2.4GHz da empresa Espressif, f
 
 Gosto muito do protocolo ESPNOW devido a sua simplicidade na montagem do robô. Ultimamente é o protocolo que tenho adotado nos meus robôs. Desenvolvi uma biblioteca que facilita o uso [ESPNOW_device](https://github.com/luisf18/ESPNOW_device) ela realiza a conexão usando nome e senha (a senha ainda não terminei de implementar 😅), que é mais facil que a conexão por MAC.  
 
-Eu montei meus radios modificando radios prontos e colocando um ESP no lugar da controladora. Meus rádios ESPNOW:  
+Eu montei meus radios modificando radios prontos e colocando um ESP no lugar da controladora.   
 
 ![Alt text](img/ESPNOW_radios.png)
 
-*E se eu não quero fazer um rádio?* Te entendo, fazer um rádio da trabalho, pra isso fiz um conversor de PPM para ESPNOW. Ele é conectado na parte de tras do rádio na porta **Trainner** ou internamente. Ele recebe os sinais do rádio e converte para ESPNOW.
+*"E se eu não quero fazer um rádio?"* Te entendo, fazer um rádio da trabalho. Pensando nisso fiz um conversor de PPM para ESPNOW. Ele é conectado na parte de tras do rádio na porta **Trainner** ou internamente. Ele recebe os sinais do rádio e converte para ESPNOW.
 
 ![Alt text](img/ESPNOW_radio_conversor.png)
 ![Alt text](img/ESPNOW_conversor.png)
 
 #### Bluetooth
 
-Tutorial: https://www.youtube.com/watch?v=hXP_kQ_EbkA
+Bluetooth é um famoso protocolo de comunicação remota que opera na faixa de 2.4GHz. Muitos dispositivos utilizam esse protocolo, inclusive controles remotos de jogos como PS4 e PS3 e smartphones.
 
+### Usando um controle de PS3 ou PS4 como rádio:
 
-...
+Algumas equipes utilizam esses controles para conntrolar seus robôs. Exitem bibliotecas prontas que facilitam seu uso. A recepcção dos sinais é feita por uma microcontrolador que aceite o protocolo **Bluetooth Classic** que é diferente do **BLE** fique atento a isso. Em geral é utilizado o microntrolador ESP32, os microcontroladores mais novos da Espressif não possuem **Bluetooth classic** apenas **BLE** (como o ESP32-C3 e S3).
 
+![controle bluetooth](https://img.youtube.com/vi/hXP_kQ_EbkA/maxresdefault.jpg)
+
+🧑🏼‍💻 ótimo Tutorial em português ensinando como fazer: https://www.youtube.com/watch?v=hXP_kQ_EbkA
+
+### Usando um celular como controle remoto:
+
+Usar um celular como controle pode ser uma otima solução para uma primeira competição, apesar de não ser muito confortavel funciona haha. Existem varios aplicativos ja prontos com sticks na tela e botões que transmitem via bluetooth o sinal deles.  
+
+![apps](img/apps.png)
+
+**Algumas sugestões de aplicativos para controle remoto**
+
+1. [Arduino Bluetooth Controller](https://play.google.com/store/apps/details?id=com.giristudio.hc05.bluetooth.arduino.control&hl=pt_BR)
+
+2. [BT Car Controller-Arduino/ESP](https://play.google.com/store/apps/details?id=com.giristuido.bluetooth.car.controller&hl=pt_BR)
+
+**Aplicativo util para debug e escolha de estrtégia**
+1. [Serial Bluetooth Terminal](https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=pt_BR)
+
+**Como receber o sinal:**  
+O sinal é recebido por uma placa ou micrcontrolador com **Bluetooth Classic** (Alguns aplicativos também trabalham com **BLE** cheque antes de comprar sua placa). Também existem modulos bluetooth como HC-05 para android e HC-06 para IOS. No entanto, atualmente compensa mais um ESP32 que ja recebe e processa os sinais.
+
+![bluetooth](img/modulos_bt.png)
+
+### Mixagem
+
+A mixagem é o processo de misturar os sinais de dois canais para gerar dois sinais distintos ou apenas um. Isso é importante porque geralmente os pilotos preferem ter um canal que controla a velocidade e outro que controla a rotação e isso exige mixagem. As figuras abaixo mostram as escolhas de canais mais comuns, lembrando que oque vale para o flysky também pode ser aplicado usando o PS4 ou o celular. **OBS:** a utlima forma praticamente ninguém usa.
+
+![mix_pistola](img/mix_pistola.png)
+![mix_flisky](img/mix_flisky.png)
+![no_mix_flisky](img/no_mix_flisky.png)
+
+**Como mixar?**
+
+**Rádio comprado:** Em radios comprados geralmente é possivel fazer mixagem e ajustes de sinais na propria interface do rádio (com telas e/ou botões), ou conectando o radio ao computador e usando um aplicativo para isso.
+
+**Mixagem no ESC:** Alguns ESCs de dois canais possuem a funcionalidade de mixagem embutida, geralmente ela é ativada curtocircuitando um jumper no verso da placa. Neste o esc cuida da mixagem não sendo preciso realizala no rádio.
+
+**Mixagem por microcontrolador:** Alguns projetos não utilizam ESCs e sim pontes H simples com um microcontrolador. Nesse caso a mixagem pode ser feita no rádio ou no próprio microcontrolador e é bem facil. Vou explicar um pouquinho da onde vêm as equações, se quiser pode pular pro código.
+
+As equações para mixagem resultam da modelagem cinemática inversa, que é o jeito chique de chamar o processo de obter as equações que descrevem as velocidades dos atuadores em função das velocidades finais do robô (velocidade tangencial e de rotação). Elas são obtidas manipulando as equações da cinemática direta (obtidas anteriormente) e deixando em evidencia as velocidades de cada roda. ótima sugestão de trabalhindo de casa 📝🏠.
+
+A Formula de mixagem precisa ficar considerar os limites que são ultrapassados nas quinas, por isso essas condições:
+
+$$
+v_r =
+\begin{cases}
+2000 & \text{se } ch_2 + ch_1 - 1500 > 2000 \\
+1000 & \text{se } ch_2 + ch_1 - 1500 < 1000 \\
+ch_2 + ch_1 - 1500 & \text{caso contrário}
+\end{cases}
+$$
+
+$$
+v_l =
+\begin{cases}
+2000 & \text{se } ch_2 - ch_1 + 1500 > 2000 \\
+1000 & \text{se } ch_2 - ch_1 + 1500 < 1000 \\
+ch_2 - ch_1 + 1500 & \text{caso contrário}
+\end{cases}
+$$
+
+**Código**
+
+o código abaixo funciona num Arduino ou ESP com os canais CH1 e CH2 conectados em dois pinos. 
+
+```cpp
+
+void radio_update(){
+    
+    // Leitura do sinal PWM
+    int ch1 = pulseIn(CH1_PIN, HIGH, 25000); // Canal de rotação (ex: stick horizontal)
+    int ch2 = pulseIn(CH2_PIN, HIGH, 25000); // Canal de velocidade (ex: stick vertical)
+
+    // limita o sinal
+    ch1 = constrain(ch1, 1000, 2000);
+    ch2 = constrain(ch2, 1000, 2000);
+
+    // Mixagem
+    int vr = constrain(ch2 + ch1 - 1500, 1000, 2000); // Roda direita
+    int vl = constrain(ch2 - ch1 + 1500, 1000, 2000); // Roda esquerda
+
+    // [Opcional] Comverter as velocidade em sinal PWM para ponte H
+    // onde PWM_MAX é o valor máximo de PWM: 255, 1023...
+    vr = map( vr, 1000, 2000, -PWM_MAX, PWM_MAX );
+    vl = map( vl, 1000, 2000, -PWM_MAX, PWM_MAX );
+
+    // Enviar para os motores ou PWM conforme sua lógica
+    setMotorRightSpeed(vr);
+    setMotorLeftSpeed(vl);
+}
+```
