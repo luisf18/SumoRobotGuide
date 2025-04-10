@@ -3,6 +3,11 @@ Um guia para começar da melhor forma nas competições de sumô de robôs.
 
 *Então você quer começar a montar robôs de sumo né? Ótima escolha!*
 
+## 🔗 Outros tópicos disponíveis
+- 🛒 [Lojas recomendadas](./Lojas.md)
+- 💻 [Aplicativos](./Aplicativos.md)
+- 🛠 [Sugestões de ferramentas e materiais](./Ferramentas.md)
+
 ## Super Resumo das regras
 
 No sumô de robôs dois robôs disputam em uma arena circular chamada **Dohyo** com o objetivo de empurrar o adversário para fora. As disputas ocorrem em até 3 **rounds**, sendo o terceiro um desempate caso cada um esteja com um ponto. Vence o robô que obtiver 2 pontos de **Yuko**. Essa pontuação também pode ser obtida caso o adiversário cometa alguma infração (mais detalhes nas regras).
@@ -151,6 +156,8 @@ Essas equações são uteis na mixagem do robô caso precise fazer. Ou caso quei
 
 [Mais sobre modelagem cinemática de robôs diferenciais](https://www.cs.columbia.edu/~allen/F17/NOTES/icckinematics.pdf)
 
+---
+
 ### 1.2.2 Rodas ou esteiras
 
 As rodas ou esteiras são muito importantes para os sumôs, ela é responsavel por transmitir o movimento dos motores para o robô. Oque buscar em uma roda:
@@ -171,10 +178,32 @@ $$
 v = r_{\text{roda}}\omega_{\text{motor}}
 $$
 
+Materiais:
+
+**Pneus:** Geralmente são feitos de silicone que têm um excelente coeficiente de atrito, e são macios o suficiente para aderir bem ao dohyo.  
+
+**Hub:** É o "núcleo" da roda, a peça que conecta o eixo do motor ao pneu, transmitindo o movimento. Geralmente são feitos de aluminio, alguns projetos usam de aço para almentar a inercia e a normal nas rodas. Elas também podem ser impressas em 3D, para baratear o projeto.
+
+> ### 🛒 Onde adquirir?
+
+**🇧🇷 No Brasil:**  
+A [Robocore](https://www.robocore.net/busca/StickyMAX) vende tanto o hub em alumínio quanto os pneus com dois tipos de grau Shore (unidade que indica a maciez dos pneus).
+
+**🌍 Fora do Brasil:**  
+A [JSUMO](https://www.jsumo.com/silicone-wheel-sets) é uma loja bastante conhecida por peças de sumô. Eles oferecem rodas de vários diâmetros com hubs de aço ou alumínio. Dentre as que já testei, estão entre as que têm melhor atrito. As mais comuns são as de **33×20 mm**.
+
+**🔧 Opções DIY:**  
+Para os mais aventureiros, é possível fabricar os pneus usando silicone. Já fiz testes e, com paciência, dá pra obter resultados excelentes. O hub pode ser impresso em 3D.  
+👉 [Veja esse tutorial completo](https://mcuoneclipse.com/2017/12/28/making-perfect-sticky-diy-sumo-robot-tires/) que compara vários tipos de rodas e mostra o processo de fabricação.
+
+
+---
 
 ### 1.3 Estrutura
 
 Fazendo o equilibrio dinâmico do robô, supondo que ele está andando em linha reta com velocidades iguais nas rodas e que não empina.
+
+![Alt text](img/DLC.png)
 
 $$
 mg = N_{\text{rodas}} + N_{\text{lâmina}}
