@@ -4,9 +4,8 @@ Um guia para começar da melhor forma nas competições de sumô de robôs.
 *Então você quer começar a montar robôs de sumo né? Ótima escolha!*
 
 ## 🔗 Outros tópicos disponíveis
-- 🛒 [Lojas recomendadas](./Lojas.md)
-- 💻 [Aplicativos](./Aplicativos.md)
-- 🛠 [Sugestões de ferramentas e materiais](./Ferramentas.md)
+- 🛒 [Lojas recomendadas](./lojas.md)
+- 💻 [Aplicativos](./apps.md)
 
 ## Super Resumo das regras
 
@@ -32,7 +31,7 @@ As categorias de sumô são divididas por peso e dimenssões limite, e podem ser
 
 ## Videos de demonstração
 
-**obs:** esse video não esta acelerado :P
+**obs:** esse video não esta acelerado :P  
 [![Assista no YouTube](https://img.youtube.com/vi/tBy5Q2gKjaw/hqdefault.jpg)](https://www.youtube.com/watch?v=tBy5Q2gKjaw)
 
 
@@ -81,7 +80,7 @@ Teoricamente é possivel e permitido pelas regras. Apesar de ser muito legal nã
 
 ### 1.2.1 - Sistema de locomoção diferêncial
 
-Em robótica o nome do sistema adotado nos sumôs é chamado de diferencial, nele dois motores e rodas identicas são posicionadas de forma simétrica uma oposta a outra. desta forma temos 3 possibilidades de movimentos:
+Em robótica o sistema adotado nos sumôs é chamado de diferencial, nele dois conjunto motor e roda identicos são posicionadas de forma simétrica uma oposta a outra. desta forma temos 3 possibilidades de movimentos:
 
 1. motores com velocidades iguais e mesmo sentido
 2. motores com velocidades iguais e sentido oposto
@@ -279,4 +278,34 @@ $$
 **Explicando:** essa equação descreve a aceleração máxima para que o robô não empine. ou seja, quanto menor o centro de massa menor $z_{\text{CM}}$ fazendo com que a aceleração limite seja maior e de preferencia impossivel de ser alcançada.
 
 **Aprendizado:** Quanto menor o centro de massa e mais longe das rodas mais estavel. Como o centro de massa não pode estar muito distante da roda então a solução é reduzir sua altura.
+
+
+
+### 1.X - Alimentação
+
+A alimentação é realizada por baterias de LiPo, litio polimero. A tensão delas varia de 3,3V a 4,2V por célula. Em geral uma célula é não é o suficiente para robôs de mini sumô, por isso são usadas baterias de 2 ou 3S, onde S simboliza cada celula ligada em série. Desta forma uma bateria 2S varia de 2x3,3=6,6V até 2x4,2=8,4V e a 3S de 9,9V a 12,6V.
+
+As baterias pode atingir tensões menores que 3,3V mas não é recomendado, porque abaixo disso não é saldavel para a bateria, podendo danificar de forma irreverssivel.
+
+**Dica:** Sempre fique atento a tensão das baterias e de cada célula por dois motivos: monitorar se a bateria esta operando na faixa sauldave se valores (de 3,3v a 4,2 por celula) e segundo porque quanto menor a tensão menos energia para o robô se mover, reduzindo sua competitividade. Invista em baterias reservas para rápida reposição.
+
+|categoria|Numero de calulas|Capacidade mais comum | 
+|------------|----|---|
+| Nano sumo  |  1 ~ 2S  | 60mAh  |
+| Micro sumo |  2 ~ 3S  | 150mAh |
+| Mini sumo  |  2 ~ 4S  | 330mAh |
+| Mega sumo  |  6 ~ 12S | ? |
+
+
+### 1.X - Sensores
+
+...
+
+### 1.X - Processamento
+
+...
+
+### 1.X - Rádio
+
+...
 
