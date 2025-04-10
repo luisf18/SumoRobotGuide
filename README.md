@@ -305,7 +305,66 @@ As baterias pode atingir tensões menores que 3,3V mas não é recomendado, porq
 
 ...
 
-### 1.X - Rádio
+### 1.X - Rádio Controle
+
+A comunicação radio controlada é composta por um Radio transmissor e um Receptor. Cada marca de rádio utiliza um protocolo diferente de comunicação, por exemplo a FlySky utiliza AFHDS e AFHDS-2A. Um protocolo define como os sinais são transmitidos e interpretados pelo receptor. Ao comprar um rádio é preciso observar qual protocolo ele utiliza e adquirir um receptor compativel.
+
+#### FlySky FS-I6 e FS-I6X
+
+Melhor custo beneficio para um rádio no estilo Aeromodelo. Considero uma otima opção de entrada para quem esta começando. Os modelos FS-I6 e FS-I6X são identicos a diferênça é que o X possui 10 canais e o sem X possui 6. Eles utilizam o protocolo AFHDS-2A.
+
+![Alt text](img/flysky.jpg)
+
+A própria FlySky vende vários tipo de receptores, com mais ou menos canais, com ou sem telemetria.
+
+![Alt text](img/flysky_receptores.png)
+
+Existem também outros modelos, que não são da flysky, muito utilizados compativeis com AFHDS-2A.
+
+![Alt text](img/flysky_receptores_alternativos.png)
+
+O FS2A é muito usado nas competições de robótica, ele possui 4 canais PWM e é muito pequeno oque ajuda muito no projeto. O FS-RX2A é menos utilizado ele não possiu saidas individuais para cada canal, todos os canais são transmitidos por um mesmo pino usando o protocolo PPM ou IBUS, são menos usados porque exigem decodificação do sinal para obter os canais individuais.
+
+#### Radio pistola 2.4GHz TX-4
+
+Os radios pistolas são opções muito interessantes para sumôs, muito pilotos proferem por ser mais intuitivo. O radio pistola possui um canal parececido com um gatilho que controla a velocidade do robô enquanto outro canal similar a um volante controla a rotação. O modelo 2.4GHz TX-4 é uma otima opção de baixo custo (cerca de 80 reais no aliexpress sem as taxas). Ele vem com um pequeno receptor de 4 canais. O unico problema é que ele possui poucas opções de ajuste dos canais, mas se estiver usando um arduino recebendo os sinais do receptor esses ajustes podem ser feitos no código.
+
+![Alt text](img/RadioPistola.jpg)
+
+#### ESPNOW
+
+ESPNOW é um protocolo de comunicação remota em 2.4GHz da empresa Espressif, fabricante dos microcontroladores ESP. Esse protocolo permite comunicação bidirecionail rápida entre dois ou mais ESPs. Pode ser uma excelente opção para quem quer ter um projeto enxuto sem a necessidade de um receptor.
+
+![alt text](img/ESPNOW.png)
+
+[Tutorial introdutório sobre ESPNOW](https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/)
+
+**Vantagens:**
+- Muito barato, precisa apenas de um ESP no receptor e um ESP no transmissor  
+- O projeto fica menor porque dispensa o receptor avulso.  
+- Pode ser feita telemetria, para medir tensão da bateria, corrente etc.  
+
+**Desvantagens:**
+- Se não lidar bem com as interrupções de recebmento de pacotes podem acontecer alguns comportamentos inseperados, é recomendado usar uma biblioteca ou se tiver conhecimento em programação de microcontroladores ficar atento a isso e testar bastante antes de usar  
+- O rádio teria que ser feito usando um ESP, apesar de terem inumeros projetos abertos dependendo os sticks utilizados a qualidade pode ficar muito ruim. **Fuja dos modus de joystick baratinhos!**  
+
+**Minha experiencia com ESPNOW:**  
+
+Gosto muito do protocolo ESPNOW devido a sua simplicidade na montagem do robô. Ultimamente é o protocolo que tenho adotado nos meus robôs. Desenvolvi uma biblioteca que facilita o uso [ESPNOW_device](https://github.com/luisf18/ESPNOW_device) ela realiza a conexão usando nome e senha (a senha ainda não terminei de implementar 😅), que é mais facil que a conexão por MAC.  
+
+Eu montei meus radios modificando radios prontos e colocando um ESP no lugar da controladora. Meus rádios ESPNOW:  
+
+![Alt text](img/ESPNOW_radios.png)
+
+*E se eu não quero fazer um rádio?* Te entendo, fazer um rádio da trabalho, pra isso fiz um conversor de PPM para ESPNOW. Ele é conectado na parte de tras do rádio na porta **Trainner** ou internamente. Ele recebe os sinais do rádio e converte para ESPNOW.
+
+![Alt text](img/ESPNOW_radio_conversor.png)
+![Alt text](img/ESPNOW_conversor.png)
+
+#### Bluetooth
+
+Tutorial: https://www.youtube.com/watch?v=hXP_kQ_EbkA
+
 
 ...
 
