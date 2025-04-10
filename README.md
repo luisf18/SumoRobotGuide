@@ -128,50 +128,42 @@ Abaixo, destaquei 3 cenários comuns de rampagem, com base na posição do conta
 
 ---
 
-### Recomendações de laminas
+### 🔪 Recomendações de lâminas
 
-Na minha opnião existem 3 opções principais:
+Na minha opinião, existem três opções principais de lâminas que funcionam bem em mini sumôs:
 
-![](img/laminas1.png)  
+---
 
-1. **Laminas de Estilete 18mm:** não são tão flexiveis mas até que bem durávei. Excelente opção para quem esta começando, são baratas e as mais faceis de encontrar dessa lista. A desvantagem é que precisa cortar as pontas para não ultrapassar o limite da categoria. Para fazer isso recomendo cortar com uma microretifica usando um disco diamantado.
+![](img/laminas1.png)
+
+1. **Lâminas de estilete 18 mm**  
+   São uma ótima opção para quem está começando. Fáceis de encontrar, baratas e relativamente duráveis. Embora não sejam muito flexíveis, cumprem bem o papel.  
+   A principal desvantagem é que elas ultrapassam o limite de 10 cm da categoria mini sumô, então é necessário cortar as pontas. Para isso, recomendo usar uma microretífica com disco diamantado — o corte fica mais limpo e seguro.
+
+---
 
 ![](img/laminas2.png)
 
-2. **Laminas de Limpa vidro 10mm:** Sim... existem laminas para limpar vidro doidera. É possivel encontrar no Aliexpress ou aqui no brasil essas laminas com 10mm exato, ideal pra mini sumo, ja que não precisa cortar. são mais flexiveie. No entanto, tenho a impressão que elas trincam mais na lamina em relação a de estilete. Se estiver muito trincada é hora de trocar.
+2. **Lâminas de limpador de vidro (10 mm)**  
+   Sim, isso realmente existe — lâminas para raspadores de vidro! 😄  
+   São fáceis de encontrar no AliExpress ou até no Mercado Livre, e têm exatamente 10 mm de largura — o que as torna perfeitas para mini sumô, pois dispensam cortes.  
+   São um pouco mais flexíveis que as de estilete, o que ajuda na rampagem, mas parecem trincar mais facilmente. Se notar muitas trincas, é hora de trocar.
 
 ![](img/lamina_limpa_vidro.png)
 
-Existem muitos anuncios, alguns que encontrei:
-[Aliexpress](https://pt.aliexpress.com/item/1005004493847873.html)  
-[Mercado Livre](https://produto.mercadolivre.com.br/MLB-3320261529-lamina-raspador-espatula-10-cm-multiuso-compativel-bralimpia-_JM)  
+**Alguns anuncios que encontrei:**  
+- [AliExpress](https://pt.aliexpress.com/item/1005004493847873.html)  
+- [Mercado Livre](https://produto.mercadolivre.com.br/MLB-3320261529-lamina-raspador-espatula-10-cm-multiuso-compativel-bralimpia-_JM)
 
-3. **Laminas Kansawa:** São conhecidas como as melhores laminas para mini sumo, no entanto, mais dificeis e caras de se encontrar. Forjadas no japão por raposas encantadas (acredite ).
+---
 
-[Disponiveis na loja sumozade](https://www.sumozade.com/product/kanzawa-japan-black-mini-sumo-robot-blade)
+3. **Lâminas Kanzawa**  
+   Consideradas as melhores lâminas para mini sumô — feitas com acabamento impecável e excelente desempenho.  
+   Mais difíceis de encontrar e com preço mais elevado, mas são extremamente afiadas, resistentes e já vêm prontas para uso. Forjadas no Japão por raposas encantadas 🦊 (acredite se quiser).
+
+[Disponíveis na loja Sumozade](https://www.sumozade.com/product/kanzawa-japan-black-mini-sumo-robot-blade)
 
 ![](img/kanzawa.png)
-
-
-A arte da rampagem tem sido o grande diferêncial entre os robôs atualmente. As vezes você nem precisa de um robô muito forte se sua rampa estiver bem nivelada. Vamos começar pelo começo. As rampas são uma tecnica muito inteligente de combate, caso consiga rampar o robô adversário você consegue usar parte do seu peso contra ele! Quando um robô é rampado ele fica em uma posição desfavorável, onde a tração nas rodas é reduzida, e em algum casos a aplicação de força no robô inimigo só ajuda a dar cambalhota. Destaquei 3 possibilidades de rampagem em função da posição.
-
-![](img/rampagem_casos.png)
-
-1. (1) rampagem lateral e (2) rampagem por tras. Em ambos os caso o robô adversário está em uma posição desfavorável porque na lateral e atras não existem rampas então são regiões faceis de serem rampadas.
-
-![](img/rampagem_caso3.png)
-
-2. (3) **Rampa contra rampa**  
-   Nesse caso, acontece um verdadeiro duelo de lâminas: vence quem estiver com o nivelamento mais preciso. Mas não é só isso — mesmo com um bom ajuste, é comum que existam regiões menos rentes ao chão, que acabam sendo os pontos mais vulneráveis. Aí entra um pouco de sorte… ou, no caso dos robôs RC, a experiência do piloto em saber como proteger seus pontos fracos e explorar os do adversário. 
-
-Como melhorar a rampagem:
-
-- **Qualidade da lâmina:** Quanto mais afiada e flexivel a lamina mais facilmente ela penetra por baixo no robô adversário. 
-- **Nivelamento da lâmina:** O nivelamento é realizado posicionando a lamina com fita duplaface no na frente do robô e testando. ... (terminar depois)
-- **Chassi bem nivelada:** Com o tempo e uso o chassi pode envergar, dificultando o nivelamento da lamina. Chassis impressos costumam envergar com o tempo, mas são uma boa opção pra quem esta começando. Uma alternativa é usar chassis de metal que praticamente não invergam.
-
-![](img/laminas1.png)
-![](img/laminas2.png)
 
 ---
 ### Estrutura
