@@ -1,4 +1,4 @@
-# Laminas e Rampagem
+# Lâminas e Rampagem
 
 A "arte da rampagem" tem sido um dos grandes diferenciais entre os robôs atualmente. Às vezes, um robô nem precisa ser extremamente forte — se a sua rampa estiver bem nivelada, já pode ser suficiente para vencer muitos adversários.
 
