@@ -35,7 +35,6 @@ Abaixo, destaquei 3 cenários comuns de rampagem, com base na posição do conta
 
 Na minha opinião, existem três opções principais de lâminas que funcionam bem em mini sumôs:
 
----
 
 ![](../img/laminas1.png)
 
@@ -43,9 +42,9 @@ Na minha opinião, existem três opções principais de lâminas que funcionam b
    São uma ótima opção para quem está começando. Fáceis de encontrar, baratas e relativamente duráveis. Embora não sejam muito flexíveis, cumprem bem o papel.  
    A principal desvantagem é que elas ultrapassam o limite de 10 cm da categoria mini sumô, então é necessário cortar as pontas. Para isso, recomendo usar uma microretífica com disco diamantado — o corte fica mais limpo e seguro.
 
----
-
 ![](../img/laminas2.png)
+
+---
 
 2. **Lâminas de limpador de vidro (10 mm)**  
    Sim, isso realmente existe — lâminas para raspadores de vidro! 😄  
