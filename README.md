@@ -25,6 +25,12 @@ As categorias de sumô são divididas por peso e dimenssões limite, e podem ser
 
 ![Alt text](img/categorias.png)
 
+## Videos de demonstração
+
+**obs:** esse video não esta acelerado :P
+[![Assista no YouTube](https://img.youtube.com/vi/tBy5Q2gKjaw/hqdefault.jpg)](https://www.youtube.com/watch?v=tBy5Q2gKjaw)
+
+
 ## Glossário
 
 O sumô de robôs surgiu no japão então a maioria dos termos são em japones, vou destacar aqui os principais.
@@ -39,5 +45,209 @@ O sumô de robôs surgiu no japão então a maioria dos termos são em japones, 
 
 
 
-## Mini Sumo
+## 1 - Mini Sumo
+
+Aviso: A seguir, focar um pouco mais no mini sumo porque é o robô que tenho mais experiência, mas boa parte da teoria se aplica as outras categorias com excessão de alguns tópicos relacionado ao MegaSumo, uma vez que ele usa imãs que alteram drasticamente sua dinâmica.
+
+### 1.1 - "Anatomia" do robô
+
+Irei Listar e dividir as peças para montar o robo em seções, tentarei ser o mais generalista possivel, cobrindo os tipos de robôs mais comuns. Alguns robôs podem escapar a essa classificação (e isso é ótimo! sinal que a categoria continua viva e trazendo inovações :P).
+
+- **Sistema de locomoção:** Sistema responsável por fazer o robô se mover pelo dohyo, engloba as peças e circuitos relacionados a fazerem o robô se locomover. Em geral: rodas, motores, ESCs ou Pontes H.
+- **Sistema de processamento:** Sistema responsável por fazer o robô se mover em função dos sinais do rádio, no caso rádio controlador, ou em função dos sinais dos sensores e estratégias de movimentação. Peças: microcontrolador / placa-mãe.
+- **Alimentação:** Sistema repsonsavel por fornecer energia para o robô se mover e energizar suas placas e sensores.
+- **Sensoriamento:** Conjunto de sensores utilizados no robô para identificar o ambiente, permitindo que ele identifique o robô adversário, tawara, etc.
+- **Estrutura:** A estrutura responsável por manter as peças do robô no lugar desejado, e com o centro de massa no local desejado.
+- **Sistemas de luta:** Elementos usados para dissoadir ou empurrar o robô adiversário. Exemplos mais comuns: Rampas, bandeiras e cordas. 
+- **Rádio receptor:** Circuito que recebe os sinais do Rádio controle.
+
+### 1.2 - Sistema de locomoção
+
+O sistema de locomoção é responsável por fazer o robô se mover no dohyo. 99,9% dos projetos usam rodas por que é uma forma simples e eficiente de trasmitir o movimento dos motores para o robô, alguns raros projetos usam esteiras.
+
+*porque não temos mini sumôs com pernas?*  
+Teoricamente é possivel e permitido pelas regras. Apesar de ser muito legal não são adotados por dois motivos principais: Dificuldade de montar e eficiência em relação as rodas consseguem deixar o robô mais baixo e estavel, dificultando que ele seja virado.
+
+| Sistema de locomoção |  dificuldade | eficiência | distribuição de masa |
+|----------------------|-----------|------------|------------|
+| 2 rodas com rampa na frente | facil | alta | boa parte do peso vai para as rodas proporcionado tração e o restante ajuda a manter a rampa rente ao chão. |
+| 4 rodas ou duas esteiras com rampa na frente | médio por conta do espaço | alta | Praticamente todo o peso está nas rodas / esteiras resultando em mais tração e consequentemente força, mas acaba sendo pior para rampar pois não tem tanto peso na rampa para deixala rente ao chão. |
+| pernas (hipotético) | alto | médio baixo (tendo em vista as técnicas atuais de combate que envolvem rampar e empurrar) |  |
+
+### 1.2.1 - Sistema de locomoção diferêncial
+
+Em robótica o nome do sistema adotado nos sumôs é chamado de diferencial, nele dois motores e rodas identicas são posicionadas de forma simétrica uma oposta a outra. desta forma temos 3 possibilidades de movimentos:
+
+1. motores com velocidades iguais e mesmo sentido
+2. motores com velocidades iguais e sentido oposto
+3. motores com velocidades diferentes e mesmo sentido
+
+![Alt text](img/move_1.png)
+![Alt text](img/move_2.png)
+
+Perceba que essa disposição permite que o robo se mova em praticamente todas as direções exceto na diretação das roda, ou seja, um movimento lateral. Isso pode ser atingido com rodas omnidirecionais, mas não existem grandes vantagens no seu uso para sumo, em geral, esse sistema ja é o suficiente e funciona bem.
+
+**Problemas dessa forma de locomoção:** Não da pra ganhar todas! O grande problema desse sistema aparece quando são aplicadas tensões iguais nos motores e ele deveria andar perfeitamente em linha reta mas não é oq acontece. A explicação pra isso se deve a asimetrias entre os dois lados do robô, como pequenas diferenças entre os raios da rodas, diferênças no motores (mesmo que tenha nascido da mesma fabrica um ao lado do outro) e diferenças na distribuição de peso entre as rodas.
+
+![Alt text](img/loc_problema.png)
+
+**Solução para o problema:**
+
+1. Busque deixar o robô o mais simétrico possivel, de preferencia com motores e rodas do mesmo fabricante e um projeto que não acumule peso muito de um lado só. Não entre em panico se mesmo assim o robô anida estiver curvando, isso ajuda a reduzir o problema mas sempre haveram assimetrias.
+2. Caso o seu robô seja radio controlado isso pode ser compensado no radio, de forma proporcional a velocidade da roda que estiver mais rápida. Com isso ja da pra melhorar bastante o restante é treino do piloto!
+3. Caso o seu robô seja autonomo essa diferença não vai afetar muito o desempenho do robô porque geralmente o sensoriamento compensa essa diferênça. Por exemplo: imagine um robô com dois sensores virados para frente um do lado direito e um do esquerdo. Caso ele enxergue um robô na sua frente com os dois sensores ele se move para frente, no entanto como ele se move um pouco curvo uma hora um dos sensores vai parar de enxergar nesse instante a estratégia deve reduzir a velocidade do lado que esta exergando para curvar e manter o robô no seu campo de visão até que os dois voltam a enxergar e assim continua.
+4. Solução chique: usar um giroscópio e um controlador que mede a diferença entre a rotação desejada e a rotação real, atuando para reduzir a diferênça a zero. (praticamente ninguém usa kkk mas se estiver bem calibrado funciona muuuito bem)
+
+**Um pouco de matemática:**
+
+Até o momento falei de forma intuitiva sobre o movimento do robô em função das velocidades das rodas. Agora vou ser um pouco mais analítico e apresentar algumas equações — sem me alongar demais. Neste modelo, o movimento é decomposto em velocidade linear de deslocamento ($v$) e rotação ($\omega$):
+
+$$
+v = \frac{v_R+v_L}{2}
+$$
+
+$$
+\omega = \frac{v_R-v_L}{l}
+$$
+
+Onde:  
+$v_L$ - Velocidade da roda esquerda em m/s.  
+$v_R$ - Velocidade da roda direita em m/s.  
+$v$ - velocidade linear (tangente à trajetória) em m/s  
+$l$ - distancia entre as rodas em metros  
+$\omega$ - velocidade angular (rotação em torno do centro entre as rodas) em rad/s  
+
+Essas equações descrevem a oque é chamado em robótica de modelagem cinemática direta do robô, ou seja, elas decrevem o movimento final do robô em função do movimento dos atuadores, que reste caso são os motores das rodas.
+
+Vamos testar essas equações:
+
+1. se tiver uma velocidade de $1m/s$ nas duas rodas e $l=0,01\text{m}$:
+
+$$
+v = \frac{1+1}{2} = 1\text{ m/s}
+$$
+
+$$
+\omega = \frac{1-1}{l} = 0\text{ rad/s}
+$$
+
+**ou seja:** o robô de move em linha reta para frente porque $v=1m/s$ positivo e sem fazer curva ja que $\omega = 0$
+
+2. se tiver uma velocidade de $1m/s$ na roda direita e $-1m/s$ na esquerda com $l=0,01\text{m}$:
+
+$$
+v = \frac{1-1}{2} = 0 \text{ m/s}
+$$
+
+$$
+\omega = \frac{1-(-1)}{0,01} = 200\text{ rad/s} \approx 1910 \text{ RPM}
+$$
+
+**ou seja:** o robô se rotaciona em torno do próprio eixo mas sem deslocamento.
+
+Em resumo as equações descrevem bem o movimento esperado do robô em função das velocidades das rodas, mas não representam as imprefeições de montagem do robô, tenha isso em mente.  
+
+Essas equações são uteis na mixagem do robô caso precise fazer. Ou caso queira se aprofundar no sistema de controle de movimentação do robô.
+
+[Mais sobre modelagem cinemática de robôs diferenciais](https://www.cs.columbia.edu/~allen/F17/NOTES/icckinematics.pdf)
+
+### 1.2.2 Rodas ou esteiras
+
+As rodas ou esteiras são muito importantes para os sumôs, ela é responsavel por transmitir o movimento dos motores para o robô. Oque buscar em uma roda:
+
+- Coeficiente de atrito: quanto maior o coeficiente de atrito melhor! Mais força é tranferida para o robô adversário sem derrapar.
+$$
+F \leq N_{\text{rodas}} \mu_{\text{estatico}} \text{ (caso sem derrapagem) }
+$$
+$$
+F = N_{\text{rodas}} \mu_{\text{dinâmico}} \text{ (com derrapagem) }
+$$
+- Diametro: quanto menor o diametro melhor, para aproveitar melhor a força dos motores. No entanto, tenha em mente que para um mesmo motor quanto menor a roda mais força mas menos velocidade.
+
+$$
+F = \tau_{\text{motor}}/r_{\text{roda}}
+$$
+$$
+v = r_{\text{roda}}\omega_{\text{motor}}
+$$
+
+
+### 1.3 Estrutura
+
+Fazendo o equilibrio dinâmico do robô, supondo que ele está andando em linha reta com velocidades iguais nas rodas e que não empina.
+
+$$
+mg = N_{\text{rodas}} + N_{\text{lâmina}}
+$$
+
+$$
+ma = F_{\text{rodas}} - F_{\text{lâmina}}
+$$
+
+$$
+0 = N_{\text{lâmina}}W + maz_{\text{CM}} - mgx_{\text{CM}}
+$$
+
+**onde:**
+
+- $N$: força normal  
+- $m$: massa do robô  
+- $g$: aceleração da gravidade  
+- $F$: forças horizontais  
+- $W$: distância da roda até a ponta da lâmina  
+- $x_{\text{CM}}, z_{\text{CM}}$: coordenadas do centro de massa  
+
+conclusões sobre essas equações:
+
+0. A terceira equação nos lembra que a normal é limitada ao peso do robô, a soma da normal nas rodas e na lamina é igual a força peso.
+
+Se todo o peso estiver nas rodas o robô sera muito forte mas poderá empinar muito facilmente e a rampa não estaram tão rente ao chão. 
+
+Mas se o peso estiver mais na rampa tera muito atrito na rampa e pouca tração nas rodas para ele se locomover. 
+
+O ideal é balancear a normal, deixando um pouco mais nas rodas do que na rampa, não existe uma formula mágica mas algo em torno de cerca de 70% nas rodas e 30% na rampa pode dar bons resultados. Se chamar a proporção do peso nas rodas de $K_{\text{roda}}$
+
+$$
+mg = N_{\text{rodas}} + N_{\text{lâmina}}
+$$
+
+$$
+N_{\text{rodas}} = K_{\text{roda}} mg
+$$
+
+$$
+N_{\text{rodas}} = ( 1-K_{\text{roda}} ) mg
+$$
+
+$$
+N_{\text{lâmina}}W = mgx_{\text{CM}} - maz_{\text{CM}}
+$$
+
+$$
+( 1-K_{\text{roda}} ) = x_{\text{CM}}/W - (a/g)z_{\text{CM}}/W
+$$
+
+$$
+ K_{\text{roda}} = \left(1 - \frac{x_{\text{CM}}}{W}\right) + a\left(\frac{z_{\text{CM}}}{gW}\right)
+$$
+
+1. A terceira equação descreve a condição para o robo não empinar. Caso $N_{\text{lâmina}}$ seja negativo o robô empinou.
+
+$$
+0 = N_{\text{lâmina}}W + maz_{\text{CM}} - mgx_{\text{CM}}
+$$
+
+No limite de empinar $N_{\text{lâmina}} = 0$ porque ele esta praticamente empinado então a normal na lamina tende a zero. Nesse caso a equação será:
+
+$$
+mgx_{\text{CM}} = ma_{\text{limite}}z_{\text{CM}}
+$$
+
+$$
+a_{\text{limite}} = g\frac{ x_{\text{CM}} }{ z_{\text{CM}} }
+$$
+
+**Explicando:** essa equação descreve a aceleração máxima para que o robô não empine. ou seja, quanto menor o centro de massa menor $z_{\text{CM}}$ fazendo com que a aceleração limite seja maior e de preferencia impossivel de ser alcançada.
+
+**Aprendizado:** Quanto menor o centro de massa e mais longe das rodas mais estavel. Como o centro de massa não pode estar muito distante da roda então a solução é reduzir sua altura.
 
