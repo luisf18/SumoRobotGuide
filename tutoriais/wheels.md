@@ -7,7 +7,7 @@ As rodas (ou esteiras) são essenciais em robôs de sumô — são elas que tran
 ## 🔍 O que buscar em uma roda:
 
 - **Coeficiente de atrito**  
-  Quanto maior o atrito entre o pneu e o chão, maior a força máxima do robô.
+  Quanto maior o atrito entre o pneu e o chão, maior a força máxima do robô.  
 
   $$
   F \leq N_{\text{rodas}} \mu_{\text{estático}} \quad \text{(sem derrapagem)}
