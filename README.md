@@ -53,6 +53,34 @@ O sumô de robôs surgiu no japão então a maioria dos termos são em japones, 
 
 Aviso: A seguir, focar um pouco mais no mini sumo porque é o robô que tenho mais experiência, mas boa parte da teoria se aplica as outras categorias com excessão de alguns tópicos relacionado ao MegaSumo, uma vez que ele usa imãs que alteram drasticamente sua dinâmica.
 
+## X.X - Conceitos gerais
+
+Existem alguns paradigmas que são recorrentes no sumo. O objetivo do sumo é empurrar o outro adversário para fora, como realizar isso? Ão longo do tempo foram surgindo soluções e conceito ao redor desse problema.
+
+### Força
+O mais intuitivo no sumo é pensar em força, se o meu robô é mais forte ele consegue enpurrar mais facilmente o oponente. Isso está correto, mas existem algumas condições para isso ocorrer:
+1. **para empurrar o oponente eu preciso chegar até ele**. No caso rádio controlado o piloto treina para realizar isso. No caso autonomo isso é realizado por uma estratégia programada no microcontrolado que interpreta as leituras de sensores.
+2. **para empurrar o oponente é preciso segurar ele ou encaixar nele de alguma forma**. Imagine dois robôs em formato de caixa, sem laminas, em qualquer lado que o robô atacante encoste ele irá conseguir empurra o adversário. No entanto, quando existem laminar ou espetos, dependendo da posição que o robô atacante encosta no outro ele pode acabar sendo virado ou rampado. Isso gera novas estratégias de combate que usam elementos que dificultam o robô oponente de empurrar.
+
+3. **Como ser mais forte?** A força é resultado da transmissão do movimento dos motores para o robô. Usando rodas isso é realizado pelos pneus que empurram o robôs. No entanto, as rodas dependem do atrito com o chão, caso a força de atrito seja superada a roda derrapa e a força resultante diminui. A formula que resume esse comportamente é a formula do atrito.  
+
+$$F_{at} = N\mu$$
+
+Essa formula nos revela que para ser mais forte devemos ter mais normal nas rodas e o maior coeficiente de atrito possivel. O **coeficiente de atrito** é uma costante que descreve a relação da forca de atrito com a normal aplicada entre duas superficies. Alguns silicones têm um coeficiente de atrito bem alto com madeira podendo alcançar até 1,7 de atrito estático. A **Normal** é a reação da força peso, a somatória das forças normais nas rodas e na rampa resultam na força peso que é $P=mg$. Como a gravidade não muda a solção para aumentar a força do robô é aumentar seu peso! Por isso as categorias são dividias por peso, para ser uma disputa justa.
+
+### Rampagem
+
+A arte da rampagem tem sido o grande diferêncial entre os robôs atualmente. As vezes você nem precisa de um robô muito forte se sua rampa estiver bem nivelada. Vamos começar pelo começo. As rampas são uma tecnica muito inteligente de combate, caso consiga rampar o robô adversário você consegue usar parte do seu contra ele! Quando um robô é rampado ele fica em uma posição ruim, onde a tração nas rodas é reduzida.
+
+![](img/rampagem_casos.png)
+![](img/rampagem_caso3.png)
+
+Como melhorar a rampagem:
+
+- **Qualidade da lâmina:** Quanto mais afiada e flexivel a lamina mais facilmente ela penetra por baixo no robô adversário. 
+- **Nivelamento da lâmina:** 
+
+
 ### 1.1 - "Anatomia" do robô
 
 Irei Listar e dividir as peças para montar o robo em seções, tentarei ser o mais generalista possivel, cobrindo os tipos de robôs mais comuns. Alguns robôs podem escapar a essa classificação (e isso é ótimo! sinal que a categoria continua viva e trazendo inovações :P).
@@ -451,7 +479,7 @@ void radio_update(){
     int vr = constrain(ch2 + ch1 - 1500, 1000, 2000); // Roda direita
     int vl = constrain(ch2 - ch1 + 1500, 1000, 2000); // Roda esquerda
 
-    // [Opcional] Comverter as velocidade em sinal PWM para ponte H
+    // [Opcional] Converter as velocidade em sinal PWM para ponte H
     // onde PWM_MAX é o valor máximo de PWM: 255, 1023...
     vr = map( vr, 1000, 2000, -PWM_MAX, PWM_MAX );
     vl = map( vl, 1000, 2000, -PWM_MAX, PWM_MAX );
@@ -461,3 +489,10 @@ void radio_update(){
     setMotorLeftSpeed(vl);
 }
 ```
+
+Adicionar futuramente exemplos completos:
+- Arduino + HC05 + celular
+- Arduino + Receptor + flysky (com pulsein)
+- Arduino + Receptor + flysky (com interrupt)
+- ESP32 + Bluetooth + Celular
+- ESP32 + ESPNOW
