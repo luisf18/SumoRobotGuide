@@ -118,7 +118,7 @@ Onde:
 ### 🧮 Exemplo de cálculo 
 
 - Uma bateria 2S de 330 mAh:  
-  $ 0{,}026 \times 2 \times 330 = \textbf{17{,}16\ g}$
+  $0{,}026 \times 2 \times 330 = \textbf{17{,}16\ g}$
 
 
 ---
