@@ -86,8 +86,11 @@ Irei Listar e dividir as peças para montar o robo em seções, tentarei ser o m
 - [Força](./tutoriais/force.md)
 - [Rampagem](./tutoriais/blade.md)
 - [Rodas](./tutoriais/wheels.md)
-- [Motores e seus drivers](./tutoriais/motors.md)
+- [Baterias](./tutoriais/power.md)
 - [Rádio comunicação](./tutoriais/motors.md)
+
+### Capítulos em desenvolvimento
+- [Motores e seus drivers](./tutoriais/motors.md)
 - [Estratégias](./tutoriais/strategy.md)
 - [Estrutura](./tutoriais/strategy.md)
 - [Sensores](./tutoriais/sensors.md)
