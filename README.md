@@ -53,32 +53,140 @@ O sumô de robôs surgiu no japão então a maioria dos termos são em japones, 
 
 Aviso: A seguir, focar um pouco mais no mini sumo porque é o robô que tenho mais experiência, mas boa parte da teoria se aplica as outras categorias com excessão de alguns tópicos relacionado ao MegaSumo, uma vez que ele usa imãs que alteram drasticamente sua dinâmica.
 
-## X.X - Conceitos gerais
+### X.X - Conceitos gerais
 
-Existem alguns paradigmas que são recorrentes no sumo. O objetivo do sumo é empurrar o outro adversário para fora, como realizar isso? Ão longo do tempo foram surgindo soluções e conceito ao redor desse problema.
+Existem alguns dilemas que são recorrentes no sumo. O objetivo do sumo é empurrar o outro adversário para fora, como realizar isso? A resposta não é unica! Ao longo do tempo foram surgindo algumas soluções e estratégias.
 
-### Força
-O mais intuitivo no sumo é pensar em força, se o meu robô é mais forte ele consegue enpurrar mais facilmente o oponente. Isso está correto, mas existem algumas condições para isso ocorrer:
-1. **para empurrar o oponente eu preciso chegar até ele**. No caso rádio controlado o piloto treina para realizar isso. No caso autonomo isso é realizado por uma estratégia programada no microcontrolado que interpreta as leituras de sensores.
-2. **para empurrar o oponente é preciso segurar ele ou encaixar nele de alguma forma**. Imagine dois robôs em formato de caixa, sem laminas, em qualquer lado que o robô atacante encoste ele irá conseguir empurra o adversário. No entanto, quando existem laminar ou espetos, dependendo da posição que o robô atacante encosta no outro ele pode acabar sendo virado ou rampado. Isso gera novas estratégias de combate que usam elementos que dificultam o robô oponente de empurrar.
+---
 
-3. **Como ser mais forte?** A força é resultado da transmissão do movimento dos motores para o robô. Usando rodas isso é realizado pelos pneus que empurram o robôs. No entanto, as rodas dependem do atrito com o chão, caso a força de atrito seja superada a roda derrapa e a força resultante diminui. A formula que resume esse comportamente é a formula do atrito.  
+### Força 🦾
 
-$$F_{at} = N\mu$$
+A primeira coisa que vem à cabeça no sumô é: **quem for mais forte, vence**. E de fato, um robô mais forte tem mais chances de empurrar o adversário para fora — mas essa força só é eficaz se algumas condições forem atendidas:
 
-Essa formula nos revela que para ser mais forte devemos ter mais normal nas rodas e o maior coeficiente de atrito possivel. O **coeficiente de atrito** é uma costante que descreve a relação da forca de atrito com a normal aplicada entre duas superficies. Alguns silicones têm um coeficiente de atrito bem alto com madeira podendo alcançar até 1,7 de atrito estático. A **Normal** é a reação da força peso, a somatória das forças normais nas rodas e na rampa resultam na força peso que é $P=mg$. Como a gravidade não muda a solção para aumentar a força do robô é aumentar seu peso! Por isso as categorias são dividias por peso, para ser uma disputa justa.
+1. **É preciso alcançar o oponente.**  
+   No caso de robôs rádio controlados, isso depende da habilidade do piloto. Já nos autônomos, é o conjunto de sensores e a estratégia embarcada no microcontrolador que define como o robô encontra e ataca o adversário.
+
+2. **É preciso se manter em contato sem ser repelido.**  
+   Imagine dois robôs em formato de caixa, sem rampas ou lâminas: qualquer contato permite empurrar o outro. Agora, se um deles tiver lâminas, espetos ou rampas mal posicionadas, pode acabar sendo rampado ou até virado ao fazer contato — o que abre espaço para estratégias mais elaboradas de combate.  
+
+
+**Como ser “mais forte”?**  
+   A força que o robô consegue aplicar depende diretamente da tração das rodas no chão. Essa força de tração é limitada pelo atrito — e se ele for superado, as rodas derrapam, desperdiçando energia.
+
+A equação clássica do atrito é:
+
+$$
+F_{at} = N\mu
+$$
+
+Onde:  
+- $F_{at}$ é a força de atrito máxima antes de derrapar;  
+- $N$ é a força normal (basicamente o peso sobre a roda);  
+- $\mu$ é o coeficiente de atrito entre roda e piso.
+
+Portanto, para maximizar a força:
+- Use **materiais com alto coeficiente de atrito** (como alguns silicones que chegam a $\mu = 1{,}7$ em madeira);
+- **Aumente a normal nas rodas**, ou seja, distribua mais peso sobre elas.
+
+Como a gravidade é constante, a única forma de aumentar a força peso ($P=mg$) é aumentar a **massa do robô** — daí a limitação de peso nas categorias, para manter a competição justa.
+
+Por fim, é importante **equilibrar o peso** entre rodas e lâmina.  
+O ideal é concentrar a maior parte da força normal nas rodas, mas manter uma fração na lâmina ajuda a mantê-la rente ao chão, melhorando a estabilidade e a capacidade de rampar o oponente. Mais detalhes sobre distribuição de peso na parte de estrutura.
+
+---
 
 ### Rampagem
 
-A arte da rampagem tem sido o grande diferêncial entre os robôs atualmente. As vezes você nem precisa de um robô muito forte se sua rampa estiver bem nivelada. Vamos começar pelo começo. As rampas são uma tecnica muito inteligente de combate, caso consiga rampar o robô adversário você consegue usar parte do seu contra ele! Quando um robô é rampado ele fica em uma posição ruim, onde a tração nas rodas é reduzida.
+A "arte da rampagem" tem sido um dos grandes diferenciais entre os robôs atualmente. Às vezes, um robô nem precisa ser extremamente forte — se a sua rampa estiver bem nivelada, já pode ser suficiente para vencer muitos adversários.
+
+Rampas são uma técnica inteligente de combate. Quando você consegue **rampar o robô adversário**, está, na prática, usando parte do peso dele contra ele mesmo! Ao ser rampado, o oponente perde tração nas rodas e, em certos casos, ao tentar empurrar de volta, só ajuda a se desequilibrar — ou até dar uma cambalhota.
+
+Abaixo, destaquei 3 cenários comuns de rampagem, com base na posição do contato:
 
 ![](img/rampagem_casos.png)
+
+1. **Rampagem lateral e por trás**  
+   São as situações (1) e (2). Nessas posições, o robô rampado está em grande desvantagem, já que são regiões sem laminas e pode ser dificil fazer um movimento para escapar da rampagem.
+
 ![](img/rampagem_caso3.png)
+
+2. (3) **Rampa contra rampa**  
+   Nesse caso, acontece um verdadeiro duelo de lâminas: vence quem estiver com o nivelamento mais preciso. Mas não é só isso — mesmo com um bom ajuste, é comum que existam regiões menos rentes ao chão, que acabam sendo os pontos mais vulneráveis. Aí entra um pouco de sorte… ou, no caso dos robôs RC, a experiência do piloto em saber como proteger seus pontos fracos e explorar os do adversário.
+
+---
+
+### 🔧 Como melhorar a rampagem:
+
+- **Qualidade da lâmina**  
+  Quanto mais afiada e flexível a lâmina, maior a chance de conseguir "entrar por baixo" do adversário. Materiais finos e resistentes são os mais indicados.
+
+- **Nivelamento da lâmina**  
+  Um bom nivelamento é essencial. Isso é feito posicionando a lâmina com fita dupla face e testando em superfícies planas (como vidro ou o próprio dohyo). Pequenas folgas podem ser o suficiente para perder rampagens.
+
+- **Chassi bem nivelado**  
+  Com o tempo, o chassi pode deformar, principalmente se for impresso em 3D. Isso atrapalha o nivelamento da lâmina. Impressão 3D é uma ótima opção para começar, mas se você busca mais consistência e durabilidade, vale considerar um chassi metálico ou feito com materiais mais rígidos.
+
+---
+
+### Recomendações de laminas
+
+Na minha opnião existem 3 opções principais:
+
+![](img/laminas1.png)  
+
+1. **Laminas de Estilete 18mm:** não são tão flexiveis mas até que bem durávei. Excelente opção para quem esta começando, são baratas e as mais faceis de encontrar dessa lista. A desvantagem é que precisa cortar as pontas para não ultrapassar o limite da categoria. Para fazer isso recomendo cortar com uma microretifica usando um disco diamantado.
+
+![](img/laminas2.png)
+
+2. **Laminas de Limpa vidro 10mm:** Sim... existem laminas para limpar vidro doidera. É possivel encontrar no Aliexpress ou aqui no brasil essas laminas com 10mm exato, ideal pra mini sumo, ja que não precisa cortar. são mais flexiveie. No entanto, tenho a impressão que elas trincam mais na lamina em relação a de estilete. Se estiver muito trincada é hora de trocar.
+
+![](img/lamina_limpa_vidro.png)
+
+Existem muitos anuncios, alguns que encontrei:
+[Aliexpress](https://pt.aliexpress.com/item/1005004493847873.html)  
+[Mercado Livre](https://produto.mercadolivre.com.br/MLB-3320261529-lamina-raspador-espatula-10-cm-multiuso-compativel-bralimpia-_JM)  
+
+3. **Laminas Kansawa:** São conhecidas como as melhores laminas para mini sumo, no entanto, mais dificeis e caras de se encontrar. Forjadas no japão por raposas encantadas (acredite ).
+
+[Disponiveis na loja sumozade](https://www.sumozade.com/product/kanzawa-japan-black-mini-sumo-robot-blade)
+
+![](img/kanzawa.png)
+
+
+A arte da rampagem tem sido o grande diferêncial entre os robôs atualmente. As vezes você nem precisa de um robô muito forte se sua rampa estiver bem nivelada. Vamos começar pelo começo. As rampas são uma tecnica muito inteligente de combate, caso consiga rampar o robô adversário você consegue usar parte do seu peso contra ele! Quando um robô é rampado ele fica em uma posição desfavorável, onde a tração nas rodas é reduzida, e em algum casos a aplicação de força no robô inimigo só ajuda a dar cambalhota. Destaquei 3 possibilidades de rampagem em função da posição.
+
+![](img/rampagem_casos.png)
+
+1. (1) rampagem lateral e (2) rampagem por tras. Em ambos os caso o robô adversário está em uma posição desfavorável porque na lateral e atras não existem rampas então são regiões faceis de serem rampadas.
+
+![](img/rampagem_caso3.png)
+
+2. (3) **Rampa contra rampa**  
+   Nesse caso, acontece um verdadeiro duelo de lâminas: vence quem estiver com o nivelamento mais preciso. Mas não é só isso — mesmo com um bom ajuste, é comum que existam regiões menos rentes ao chão, que acabam sendo os pontos mais vulneráveis. Aí entra um pouco de sorte… ou, no caso dos robôs RC, a experiência do piloto em saber como proteger seus pontos fracos e explorar os do adversário. 
 
 Como melhorar a rampagem:
 
 - **Qualidade da lâmina:** Quanto mais afiada e flexivel a lamina mais facilmente ela penetra por baixo no robô adversário. 
-- **Nivelamento da lâmina:** 
+- **Nivelamento da lâmina:** O nivelamento é realizado posicionando a lamina com fita duplaface no na frente do robô e testando. ... (terminar depois)
+- **Chassi bem nivelada:** Com o tempo e uso o chassi pode envergar, dificultando o nivelamento da lamina. Chassis impressos costumam envergar com o tempo, mas são uma boa opção pra quem esta começando. Uma alternativa é usar chassis de metal que praticamente não invergam.
+
+![](img/laminas1.png)
+![](img/laminas2.png)
+
+---
+### Estrutura
+
+---
+### rodas
+
+---
+### Motores
+
+---
+### Velocidade
+
+---
+### Sensores
 
 
 ### 1.1 - "Anatomia" do robô
