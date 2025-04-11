@@ -1,4 +1,6 @@
+![](img/capa_menor.png)
 # SumoRobotGuide
+
 Um guia para começar da melhor forma nas competições de sumô de robôs.
 
 *Então você quer começar a montar robôs de sumo né? Ótima escolha!*
@@ -48,53 +50,73 @@ O sumô de robôs surgiu no japão então a maioria dos termos são em japones, 
 ![Alt text](img/Dohyo.png)
 
 
+## 1 - Mini Sumô
 
-## 1 - Mini Sumo
-
-Aviso: A seguir, focar um pouco mais no mini sumo porque é o robô que tenho mais experiência, mas boa parte da teoria se aplica as outras categorias com excessão de alguns tópicos relacionado ao MegaSumo, uma vez que ele usa imãs que alteram drasticamente sua dinâmica.
-
-### X.X - Aspectos gerais
-
-Existem alguns dilemas que são recorrentes no sumo. O objetivo do sumo é empurrar o outro adversário para fora, como realizar isso? A resposta não é unica! Ao longo do tempo foram surgindo algumas soluções e estratégias. Um dilema dos dilemas mais comuns é a questão da Força vs Velocidade, principalmente no Mega Sumo onde da pra ter muita força e ou muita velocidade! Existem outras questões também como estratégia, rampagem, sensoriamento, bandeiras, espetos etc. Estratégias diferentes que ajudar a empurrar o oponente ou dissoadilo.
-
-Principais aspectos de um robô de sumô:
-
-- Força
-- Velocidade
-- Estratégia
-- Sensoriamento
-- Rampa ou outro elementos como bandeiras
-- Treino, tanto no Auto como no RC para fazer as escolhas mais adequadas
-
-*com isso ja da pra fazer as cartinhas de trunfo* 😂
-
-### 1.1 - Principais peças
-
-Irei Listar e dividir as peças para montar o robo em seções, tentarei ser o mais generalista possivel, cobrindo os tipos de robôs mais comuns. Alguns robôs podem escapar a essa classificação (e isso é ótimo! sinal que a categoria continua viva e trazendo inovações :P).
-
-- **Sistema de locomoção:** Sistema responsável por fazer o robô se mover pelo dohyo, engloba as peças e circuitos relacionados a fazerem o robô se locomover. Em geral: rodas, motores, ESCs ou Pontes H.
-- **Sistema de processamento:** Sistema responsável por fazer o robô se mover em função dos sinais do rádio, no caso rádio controlador, ou em função dos sinais dos sensores e estratégias de movimentação. Peças: microcontrolador / placa-mãe.
-- **Alimentação:** Sistema repsonsavel por fornecer energia para o robô se mover e energizar suas placas e sensores.
-- **Sensoriamento:** Conjunto de sensores utilizados no robô para identificar o ambiente, permitindo que ele identifique o robô adversário, tawara, etc.
-- **Estrutura:** A estrutura responsável por manter as peças do robô no lugar desejado, e com o centro de massa no local desejado.
-- **Sistemas de luta:** Elementos usados para dissoadir ou empurrar o robô adiversário. Exemplos mais comuns: Rampas, bandeiras e cordas. 
-- **Rádio receptor:** Circuito que recebe os sinais do Rádio controle.
+> ⚠️ Aviso:  
+> Esta seção foca um pouco mais na categoria **mini sumô**, pois é onde tenho mais experiência prática. No entanto, boa parte dos conceitos e estratégias também se aplicam às outras categorias — com exceção de alguns pontos específicos do **Mega Sumô**, que usa **ímãs**, alterando drasticamente sua dinâmica.
 
 ---
 
-### Capítulos
+### 1.X - Aspectos gerais
+
+No sumô, o objetivo é: **empurrar o adversário para fora da arena**. Mas a forma de alcançar isso varia bastante, e é aí que a coisa fica interessante!
+
+Com o tempo, diferentes soluções e estratégias foram surgindo. Um dos dilemas mais comuns — especialmente no **Mega Sumô** — é o clássico **Força vs Velocidade**. Mas existem muitos outros elementos que influenciam no sucesso de um robô: **estratégia**, **rampagem**, **sensoriamento**, uso de **bandeiras**, **cordas**, e muito mais.
+
+Abaixo estão os principais aspectos que moldam um bom robô de sumô:
+
+- **Força**  
+- **Velocidade**  
+- **Estratégia**  
+- **Sensoriamento** (Autonomo ou RC semi-autonomo)  
+- **Rampa** ou elementos como bandeiras, espetos e mecanismos criativos  
+- **Treinamento** — tanto no modo autônomo quanto rádio controlado, para fazer as melhores escolhas em combate
+
+> *Com esses aspectos já dá pra montar as cartinhas de Super Trunfo!* 😂
+
+---
+
+### 1.1 - Principais sistemas e peças
+
+Aqui estão os principais conjuntos de peças que compõem um robô de sumô. A ideia é ser o mais generalista possível, cobrindo os formatos mais comuns — mas é sempre ótimo quando surgem designs fora do padrão (sinal de que a categoria está viva e inovando!).
+
+- **Sistema de locomoção:**  
+  Responsável pelo movimento do robô. Inclui rodas, motores, e os circuitos que controlam esses motores (como ESCs ou pontes H).
+
+- **Sistema de processamento:**  
+  Controla o comportamento do robô com base nos sinais do rádio (modo RC) ou dos sensores e estratégias programadas (modo autônomo). Normalmente feito por um microcontrolador ou placa de controle.
+
+- **Alimentação:**  
+  Fornece energia para todo o sistema, incluindo motores, sensores e lógica. Normalmente é feito com baterias LiPo.
+
+- **Sensoriamento:**  
+  Conjunto de sensores que ajudam o robô a entender o ambiente, detectando o adversário, a borda do dohyo (tawara), etc.
+
+- **Estrutura:**  
+  Parte mecânica que mantém todas as peças no lugar e posiciona corretamente o centro de massa.
+
+- **Sistemas de combate:**  
+  Elementos destinados a **dissuadir** ou **empurrar** o adversário. Exemplos: rampas, bandeiras, cordas e outros mecanismos.
+
+- **Receptor de rádio:**  
+  Responsável por receber os sinais do rádio controle no caso de robôs RC.
+
+---
+
+### 📚 Capítulos
+
 - [Força](./tutoriais/force.md)
-- [Rampagem](./tutoriais/blade.md)
+- [Laminas e Rampagem](./tutoriais/blade.md)
 - [Rodas](./tutoriais/wheels.md)
 - [Baterias](./tutoriais/power.md)
 - [Rádio comunicação](./tutoriais/radio.md)
 
-### Capítulos em desenvolvimento
+---
+
+### 🚧 Capítulos em desenvolvimento
+
 - [Motores e seus drivers](./tutoriais/motors.md)
 - [Estratégias](./tutoriais/strategy.md)
 - [Estrutura](./tutoriais/struct.md)
 - [Sensores](./tutoriais/sensors.md)
 - [Sistema de locomoção e cinemática](./tutoriais/kinematics.md)
-
-
----
