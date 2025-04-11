@@ -13,6 +13,7 @@ Um guia para começar da melhor forma nas competições de sumô de robôs.
 
 - [Força](./tutoriais/force.md)
 - [Laminas e Rampagem](./tutoriais/blade.md)
+- [Estrutura](./tutoriais/struct.md)
 - [Rodas](./tutoriais/wheels.md)
 - [Baterias](./tutoriais/power.md)
 - [Rádio comunicação](./tutoriais/radio.md)
@@ -22,7 +23,6 @@ Um guia para começar da melhor forma nas competições de sumô de robôs.
 - [Controle do Juiz](./tutoriais/ir_remote.md)
 - [Motores e seus drivers](./tutoriais/motors.md)
 - [Estratégias](./tutoriais/strategy.md)
-- [Estrutura](./tutoriais/struct.md)
 - [Sensores](./tutoriais/sensors.md)
 - [Sistema de locomoção e cinemática](./tutoriais/kinematics.md)
 
