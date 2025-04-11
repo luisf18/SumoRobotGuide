@@ -54,7 +54,7 @@ O robô atacado pode deslizar pela rampa do adversário e virar — uma cambalho
 > ⚠️ **Aviso:** Cuidado as vezes um robô rampa o outro e ele passa por cima dele, **não capota**. Para impedir que isso ocorra prolongue a chapa metalica frontal e de preferência faça uma pequena dobra para impedir que o robô passe por cima.
 
 <p  align="center">
-  <img src="../img/rampagem_voadora.gif" alt="Descrição da imagem" width="400"/>
+  <img src="../img/rampagem_voadora.gif" alt="Descrição da imagem" width="550"/>
   <BR>
   Mesmo rampando perfeitamente o robô rampado acaba passando por cima dele e ganhando.
 </p>
@@ -71,19 +71,19 @@ Esse impasse pode resultar em:
 - Uma manobra de escape ou reataque bem executada.
 
 <p  align="center">
-  <img src="../img/rampagem_frontal_travada.gif" alt="Descrição da imagem" width="400"/>
+  <img src="../img/rampagem_frontal_travada.gif" alt="Descrição da imagem" width="550"/>
   <BR>
   Rampagem frontal com rampa travada no outro robô.
 </p>
 
 <p  align="center">
-  <img src="../img/rampagem_efetiva.gif" alt="Descrição da imagem" width="400"/>
+  <img src="../img/rampagem_efetiva.gif" alt="Descrição da imagem" width="550"/>
   <BR>
   Rampagem efetiva em camera lenta. Mesmo o robô escapando da primeira rampagem o atacante foi mas rápido e acaba rampando por trás.
 </p>
 
 <p  align="center">
-  <img src="../img/rampagem_efetiva_normal.gif" alt="Descrição da imagem" width="400"/>
+  <img src="../img/rampagem_efetiva_normal.gif" alt="Descrição da imagem" width="550"/>
   <BR>
   O mesmo em velocidade normal.
 </p>
