@@ -97,7 +97,7 @@ Escapar de uma rampagem é possível — mas nem sempre fácil. Em geral, a **ve
 <p  align="center">
   <img src="../img/rampagem_escapando1.gif" alt="Descrição da imagem" width="550"/>
   <BR>
-  O mesmo em velocidade normal.
+  Escapando de uma rampagem com manobras rápidas.
 </p>
 
 ### 🔙 Caso (1) — Rampagem por trás
