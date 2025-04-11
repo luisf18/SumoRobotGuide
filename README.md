@@ -58,7 +58,7 @@ As categorias de sumô são divididas por peso e dimenssões limite, e podem ser
 **obs:** esse video não esta acelerado :P  
 [![Assista no YouTube](https://img.youtube.com/vi/tBy5Q2gKjaw/hqdefault.jpg)](https://www.youtube.com/watch?v=tBy5Q2gKjaw)
 
-![round_demo](img/round_demo.gif)
+![round_demo](img/round_demo.gif)  
 [Video mini sumo](https://www.youtube.com/watch?v=vj_HQ1thTB0)
 
 ### Glossário
