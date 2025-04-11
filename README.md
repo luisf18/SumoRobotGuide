@@ -123,8 +123,4 @@ Aqui estão os principais conjuntos de peças que compõem um robô de sumô. A 
 - **Receptor de rádio:**  
   Responsável por receber os sinais do rádio controle no caso de robôs RC.
 
-Esemplo prático:
-
-
-
 ---
