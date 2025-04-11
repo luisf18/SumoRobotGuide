@@ -4,20 +4,40 @@ A "arte da rampagem" tem sido um dos grandes diferenciais entre os robôs atualm
 
 Rampas são uma técnica inteligente de combate. Quando você consegue **rampar o robô adversário**, está, na prática, usando parte do peso dele contra ele mesmo! Ao ser rampado, o oponente perde tração nas rodas e, em certos casos, ao tentar empurrar de volta, só ajuda a se desequilibrar — ou até dar uma cambalhota.
 
-Abaixo, destaquei 3 cenários comuns de rampagem, com base na posição do contato:
+
+## Cenários de Rampagem
+
+Abaixo, destaquei 3 cenários comuns de rampagem, com base na posição do contato entre os robôs:
+
+---
+
+### 1. **Rampagem lateral e por trás**  
 
 ![](../img/rampagem_casos.png)
 
-1. **Rampagem lateral e por trás**  
-   São as situações (1) e (2). Nessas posições, o robô rampado está em grande desvantagem, já que são regiões sem laminas e pode ser dificil fazer um movimento para escapar da rampagem.
+São os casos (1) e (2). Nessas posições, o robô atacado está em grande desvantagem, já que essas regiões geralmente **não possuem lâminas** sendo facilmente rampadas.  
+Além disso, a resposta costuma ser limitada:
+- É difícil perceber o ataque a tempo, especialmente na traseira;
+- Há **pouco espaço para manobrar**, e em alguns casos, o robô perde o contato das rodas com o chão, ficando completamente indefeso;
+- No caso lateral, quando o atacante tem pouca força, os robôs podem entrar em um movimento de **rotação lateral contínuo**, presos num tipo de "dança" ao redor do dohyo. Girando em círculo até que um deles saia ou o juiz reinicie o round.
+
+<figure align="center">
+  <img src="../img/rampagem_lateral.gif" alt="Descrição da imagem" width="300"/>
+  <figcaption>Rampagem lateral mal sucedida <B>rotação lateral</B></figcaption>
+</figure>
+
+---
+
+### 2. (3) **Rampa contra rampa**  
 
 ![](../img/rampagem_caso3.png)
 
-2. (3) **Rampa contra rampa**  
-   Nesse caso, acontece um verdadeiro duelo de lâminas: vence quem estiver com um melhor nivelamento. Mas não é só isso — mesmo com um bom ajuste, é comum que existam regiões menos rentes ao chão, que acabam sendo os pontos mais vulneráveis. Aí entra um pouco de sorte… ou, no caso dos robôs RC, a experiência do piloto em saber como proteger seus pontos fracos e explorar os do adversário.
-#### (3-a) Capotagem do oponente  
+Nesse caso, acontece um verdadeiro duelo de lâminas: vence quem estiver com um melhor **nivelamento**. Mas não é só isso — mesmo com um bom ajuste, é comum que existam regiões menos rentes ao chão, que acabam sendo os pontos mais vulneráveis.
 
-O robô atacado desliza sobre a rampa do oponente e acaba girando até virar de cabeça para baixo — uma **cambalhota**. De acordo com as regras, um robô virado perde o round.
+> A experiência do piloto (no caso de robôs RC) e o conhecimento do próprio robô fazem muita diferença nessa disputa.
+
+#### (3-a) Capotagem do oponente  
+O robô atacado pode deslizar pela rampa do adversário e virar — uma cambalhota. Segundo as regras, um robô virado perde automaticamente o round.
 
 **Fatores que favorecem a capotagem:**
 
@@ -29,22 +49,55 @@ O robô atacado desliza sobre a rampa do oponente e acaba girando até virar de 
 
 ![](../img/face.png)
 
-#### (3-b) Robôs travados entre laminas  
+#### (3-b) Robôs travados entre rampas  
+O contato entre as rampas pode gerar um **encaixe** ou travamento. Nessa situação, o desfecho depende de:
+- Força de tração;
+- Torque dos motores;
+- Estratégia de movimentação.
 
-O contato entre as rampas pode gerar um **encaixe** ou travamento entre os robôs. Nesses casos, o desfecho depende de fatores como torque, tração e estratégia.
-
-Esse tipo de situação pode:
-- Levar a um impasse momentâneo;
-- Ser resolvido com manobras;
-- Terminar com um rompimento súbito, geralmente favorecendo o robô mais estável ou forte.
+Esse impasse pode resultar em:
+- Um dos robôs com mais torque empurra o outro para fora.
+- Movimento de **rotação lateral contínuo**: similar ao caso **(1)**, o contato entre as rampas pode não ser perfeitamente frontal, o que pode gerar esse movimento circular, onde os robôs giram em círculo até que um deles saia do dohyo ou o juiz reinicie o round.
+- Uma manobra de escape ou reataque bem executada.
 
 ---
 
-## Como escapar de uma rampagem:
+## 🏃‍♂️ Como escapar de uma rampagem
 
-Escapar de uma rampagem é possivel, em geral a velocidade é o maior aliado, para fazer movimentações rápidas antes saindo do campo de ataque do robô inimigo antes que seja empurrado para fora. No caso 1 é praticamente impossivel, porque gerlmente os robôs não têm sensores atrá, e mesmo que o robô rampado preceba ele precisaria fazer um movimento rápido para frente e para lateral antes que esteja na borda do dohyo, limitando muito o seu espaço de manobra, alem disso dependendo do contato o pode perder o contato das rodas com o chão ficando totalmente a merce do atacante. No caso (2) se mover um pouco para o lado oposto e para frente pode ser a solução, mas em algum casos os robôs pode ficar em looping girando em circulos. No caso (3-b) é uma disputa de torque, quem for mais forte tem mais chance de empurrar o oponentes para fora. Mas o efeito de rotação também pode acontecer porque eles não estão perfeitamente um de frente para o outro gerando uma parcela de rotação. Nesse caso um dos robôs pode dar uma penequa ré e depois reatacar, podendo ficar numa posição mais vaforável.
+Escapar de uma rampagem é possível — mas nem sempre fácil. Em geral, a **velocidade**, **manobrabilidade** e **tempo de resposta** são seus maiores aliados. Abaixo, estratégias práticas para cada tipo:
 
+---
 
+### 🔙 Caso (1) — Rampagem por trás
+
+É o cenário mais difícil de escapar:
+
+- Tente se mover **para frente e para a lateral** rapidamente, se houver espaço;
+- Mas atenção: o contato pode levantar suas rodas do chão, anulando sua tração e capacidade de moviemntação;
+- Robôs autônomos raramente têm sensores traseiros, então podem tentar adotar movimentos evasivos programados.
+
+---
+
+### ↩️ Caso (2) — Rampagem lateral
+
+Ainda há chance de resposta:
+
+- Avançar em diagonal oposta ao atacante ou girar no sentido contrário ao empurrão pode ser a chave para escapar da rampa.
+---
+
+### ⚔️ Caso (3-b) — Rampa contra rampa (travada)
+
+Esse caso exige **paciência e estratégia**:
+
+- Execute uma pequena **ré para sair do encaixe** e **reatacar com mais energia cinética**;
+- Isso pode gerar impulso suficiente para vencer o impasse;
+- Evite empurrões contínuos que apenas mantêm o travamento ou favorecem a rotação em círculo.
+
+---
+
+🧠 **Resumo:**  
+**Velocidade**, **posicionamento**, e um bom plano de reação são suas melhores armas contra uma rampagem.  
+Mesmo em situações críticas, uma manobra bem executada pode mudar completamente o rumo da batalha.
 
 ---
 
