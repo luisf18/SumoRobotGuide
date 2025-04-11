@@ -20,11 +20,12 @@ Além disso, a resposta costuma ser limitada:
 - Há **pouco espaço para manobrar**, e em alguns casos, o robô perde o contato das rodas com o chão, ficando completamente indefeso;
 - No caso lateral, quando o atacante tem pouca força, os robôs podem entrar em um movimento de **rotação lateral contínuo**, presos num tipo de "dança" ao redor do dohyo. Girando em círculo até que um deles saia ou o juiz reinicie o round.
 
+
+
 <p  align="center">
-<figure align="center">
-  <img src="../img/rampagem_lateral.gif" alt="Descrição da imagem" width="300"/>
-  <figcaption>Rampagem lateral mal sucedida <B>rotação lateral</B></figcaption>
-</figure>
+  <img src="../img/rampagem_lateral.gif" alt="Descrição da imagem" width="400"/>
+  <BR>
+  Rampagem lateral mal sucedida <B>rotação lateral</B>
 </p>
 
 ---
