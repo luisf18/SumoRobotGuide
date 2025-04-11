@@ -13,15 +13,15 @@ Vamos analisar o equilíbrio dinâmico do robô considerando que ele anda em lin
 As equações básicas são:  
 
 $$
-mg = N_{\text{rodas}} + N_{\text{lâmina}} \tag{1}
+mg = N_{\text{rodas}} + N_{\text{lâmina}}
 $$
 
 $$
-ma = F_{\text{rodas}} - F_{\text{lâmina}} \tag{2}
+ma = F_{\text{rodas}} - F_{\text{lâmina}}
 $$
 
 $$
-0 = N_{\text{lâmina}}W + ma z_{\text{CM}} - mg x_{\text{CM}} \tag{3}
+0 = N_{\text{lâmina}}W + ma z_{\text{CM}} - mg x_{\text{CM}}
 $$
 
 **Onde:**
@@ -44,19 +44,19 @@ $$
 
    Uma boa prática é manter **aproximadamente 70% da normal nas rodas** e **30% na lâmina**. Definindo $K_{\text{roda}}$ como a fração da força normal nas rodas:
 
-   $$
-   N_{\text{rodas}} = K_{\text{roda}} \cdot mg
-   $$
+$$
+N_{\text{rodas}} = K_{\text{roda}} \cdot mg
+$$
 
-   $$
-   N_{\text{lâmina}} = (1 - K_{\text{roda}}) \cdot mg
-   $$
+$$
+N_{\text{lâmina}} = (1 - K_{\text{roda}}) \cdot mg
+$$
 
-   Substituindo na equação (3):
+Substituindo na equação:
 
-   $$
-   K_{\text{roda}} = \left(1 - \frac{x_{\text{CM}}}{W}\right) + a \left(\frac{z_{\text{CM}}}{gW}\right)
-   $$
+$$
+K_{\text{roda}} = \left(1 - \frac{x_{\text{CM}}}{W}\right) + a \left(\frac{z_{\text{CM}}}{gW}\right)
+$$
 
 Essa equação mostra como o **posicionamento** ($x_{\text{CM}}$) e a **altura** ($z_{\text{CM}}$) do centro de massa afetam a distribuição de peso (força normal) entre as rodas e a lâmina.
 
