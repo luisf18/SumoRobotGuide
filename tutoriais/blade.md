@@ -14,11 +14,41 @@ Abaixo, destaquei 3 cenários comuns de rampagem, com base na posição do conta
 ![](../img/rampagem_caso3.png)
 
 2. (3) **Rampa contra rampa**  
-   Nesse caso, acontece um verdadeiro duelo de lâminas: vence quem estiver com o nivelamento mais preciso. Mas não é só isso — mesmo com um bom ajuste, é comum que existam regiões menos rentes ao chão, que acabam sendo os pontos mais vulneráveis. Aí entra um pouco de sorte… ou, no caso dos robôs RC, a experiência do piloto em saber como proteger seus pontos fracos e explorar os do adversário.
+   Nesse caso, acontece um verdadeiro duelo de lâminas: vence quem estiver com um melhor nivelamento. Mas não é só isso — mesmo com um bom ajuste, é comum que existam regiões menos rentes ao chão, que acabam sendo os pontos mais vulneráveis. Aí entra um pouco de sorte… ou, no caso dos robôs RC, a experiência do piloto em saber como proteger seus pontos fracos e explorar os do adversário.
+#### (3-a) Capotagem do oponente  
+
+O robô atacado desliza sobre a rampa do oponente e acaba girando até virar de cabeça para baixo — uma **cambalhota**. De acordo com as regras, um robô virado perde o round.
+
+**Fatores que favorecem a capotagem:**
+
+- **Do lado do robô atacado:**  
+  Centro de massa muito alto torna o robô mais instável e fácil de virar.
+  
+- **Do lado do robô atacante:**  
+  Superfícies metálicas lisas na "face" do robô ajudam o oponente a escorregar e desequilibrar.
+
+![](../img/face.png)
+
+#### (3-b) Robôs travados entre laminas  
+
+O contato entre as rampas pode gerar um **encaixe** ou travamento entre os robôs. Nesses casos, o desfecho depende de fatores como torque, tração e estratégia.
+
+Esse tipo de situação pode:
+- Levar a um impasse momentâneo;
+- Ser resolvido com manobras;
+- Terminar com um rompimento súbito, geralmente favorecendo o robô mais estável ou forte.
 
 ---
 
-## 🔧 Como melhorar a rampagem:
+## Como escapar de uma rampagem:
+
+Escapar de uma rampagem é possivel, em geral a velocidade é o maior aliado, para fazer movimentações rápidas antes saindo do campo de ataque do robô inimigo antes que seja empurrado para fora. No caso 1 é praticamente impossivel, porque gerlmente os robôs não têm sensores atrá, e mesmo que o robô rampado preceba ele precisaria fazer um movimento rápido para frente e para lateral antes que esteja na borda do dohyo, limitando muito o seu espaço de manobra, alem disso dependendo do contato o pode perder o contato das rodas com o chão ficando totalmente a merce do atacante. No caso (2) se mover um pouco para o lado oposto e para frente pode ser a solução, mas em algum casos os robôs pode ficar em looping girando em circulos. No caso (3-b) é uma disputa de torque, quem for mais forte tem mais chance de empurrar o oponentes para fora. Mas o efeito de rotação também pode acontecer porque eles não estão perfeitamente um de frente para o outro gerando uma parcela de rotação. Nesse caso um dos robôs pode dar uma penequa ré e depois reatacar, podendo ficar numa posição mais vaforável.
+
+
+
+---
+
+## Como melhorar a rampagem:
 
 - **Qualidade da lâmina**  
   Quanto mais afiada e flexível a lâmina, maior a chance de conseguir "entrar por baixo" do adversário. Materiais finos e resistentes são os mais indicados.

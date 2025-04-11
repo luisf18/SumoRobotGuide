@@ -29,6 +29,7 @@ Um guia para começar da melhor forma nas competições de sumô de robôs.
 ### Outros
 - 🛒 [Lojas recomendadas](./lojas.md)
 - 💻 [Aplicativos](./apps.md)
+- 📖 [Artigos academicos](./tutoriais/articles.md)
 
 
 ## Introdução
