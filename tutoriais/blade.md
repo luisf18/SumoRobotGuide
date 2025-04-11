@@ -25,7 +25,7 @@ Além disso, a resposta costuma ser limitada:
 <p  align="center">
   <img src="../img/rampagem_lateral.gif" alt="Descrição da imagem" width="400"/>
   <BR>
-  Rampagem lateral mal sucedida <B>rotação lateral</B>
+  Rampagem lateral mal sucedida, resultando em <B>rotação lateral</B>.
 </p>
 
 ---
@@ -51,6 +51,14 @@ O robô atacado pode deslizar pela rampa do adversário e virar — uma cambalho
 
 ![](../img/face.png)
 
+> ⚠️ **Aviso:** Cuidado as vezes um robô rampa o outro e ele passa por cima dele, **não capota**. Para impedir que isso ocorra prolongue a chapa metalica frontal e de preferência faça uma pequena dobra para impedir que o robô passe por cima.
+
+<p  align="center">
+  <img src="../img/rampagem_voadora.gif" alt="Descrição da imagem" width="400"/>
+  <BR>
+  Mesmo rampando perfeitamente o robô rampado acaba passando por cima dele e ganhando.
+</p>
+
 #### (3-b) Robôs travados entre rampas  
 O contato entre as rampas pode gerar um **encaixe** ou travamento. Nessa situação, o desfecho depende de:
 - Força de tração;
@@ -61,6 +69,24 @@ Esse impasse pode resultar em:
 - Um dos robôs com mais torque empurra o outro para fora.
 - Movimento de **rotação lateral contínuo**: similar ao caso **(1)**, o contato entre as rampas pode não ser perfeitamente frontal, o que pode gerar esse movimento circular, onde os robôs giram em círculo até que um deles saia do dohyo ou o juiz reinicie o round.
 - Uma manobra de escape ou reataque bem executada.
+
+<p  align="center">
+  <img src="../img/rampagem_frontal_travada.gif" alt="Descrição da imagem" width="400"/>
+  <BR>
+  Rampagem frontal com rampa travada no outro robô.
+</p>
+
+<p  align="center">
+  <img src="../img/rampagem_efetiva.gif" alt="Descrição da imagem" width="400"/>
+  <BR>
+  Rampagem efetiva em camera lenta. Mesmo o robô escapando da primeira rampagem o atacante foi mas rápido e acaba rampando por trás.
+</p>
+
+<p  align="center">
+  <img src="../img/rampagem_efetiva_normal.gif" alt="Descrição da imagem" width="400"/>
+  <BR>
+  O mesmo em velocidade normal.
+</p>
 
 ---
 
