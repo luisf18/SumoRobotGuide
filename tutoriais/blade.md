@@ -4,12 +4,11 @@ A "arte da rampagem" tem sido um dos grandes diferenciais entre os robôs atualm
 
 Rampas são uma técnica inteligente de combate. Quando você consegue **rampar o robô adversário**, está, na prática, usando parte do peso dele contra ele mesmo! Ao ser rampado, o oponente perde tração nas rodas e, em certos casos, ao tentar empurrar de volta, só ajuda a se desequilibrar — ou até dar uma cambalhota.
 
+---
 
 ## Cenários de Rampagem
 
 Abaixo, destaquei 3 cenários comuns de rampagem, com base na posição do contato entre os robôs:
-
----
 
 ### 1. **Rampagem lateral e por trás**  
 
@@ -21,10 +20,12 @@ Além disso, a resposta costuma ser limitada:
 - Há **pouco espaço para manobrar**, e em alguns casos, o robô perde o contato das rodas com o chão, ficando completamente indefeso;
 - No caso lateral, quando o atacante tem pouca força, os robôs podem entrar em um movimento de **rotação lateral contínuo**, presos num tipo de "dança" ao redor do dohyo. Girando em círculo até que um deles saia ou o juiz reinicie o round.
 
+<p  align="center">
 <figure align="center">
   <img src="../img/rampagem_lateral.gif" alt="Descrição da imagem" width="300"/>
   <figcaption>Rampagem lateral mal sucedida <B>rotação lateral</B></figcaption>
 </figure>
+</p>
 
 ---
 
