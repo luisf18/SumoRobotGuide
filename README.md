@@ -1,9 +1,11 @@
+
 ![](img/capa_menor.png)
+
 # SumoRobotGuide
 
 Um guia para começar da melhor forma nas competições de sumô de robôs.
 
-*Então você quer começar a montar robôs de sumo né? Ótima escolha!*
+*Então você quer começar a montar robôs de sumô né? Ótima escolha!*
 
 ## 🔗 Outros tópicos disponíveis
 

@@ -134,12 +134,12 @@ O gatilho controla a velocidade e o volante a rotação.
 #### FlySky com mixagem ativada
 Stick vertical controla velocidade; stick horizontal controla rotação.
 
-![Mixagem no FlySky](../img/mix_flisky.png)
+![Mixagem no FlySky](../img/mix_flysky.png)
 
 #### ❌ FlySky sem mixagem
 Cada stick controla uma roda diretamente — o controle fica bem mais difícil.
 
-![Sem mixagem](../img/no_mix_flisky.png)
+![Sem mixagem](../img/no_mix_flysky.png)
 
 ---
 
