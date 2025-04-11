@@ -1,89 +1,125 @@
-# Sistema de locomo e cinemática
+# Sistema de Locomoção e Cinemática
 
-O sistema de locomoção é responsável por fazer o robô se mover no dohyo. 99,9% dos projetos usam rodas por que é uma forma simples e eficiente de trasmitir o movimento dos motores para o robô, alguns raros projetos usam esteiras.
+O sistema de locomoção é responsável por fazer o robô se mover pelo dohyo. Em cerca de **99,9% dos projetos**, são utilizadas **duas rodas com tração independente**, por serem simples, muito eficientes na transmissão de força e mobilidade do robô. Alguns poucos projetos experimentais utilizam esteiras — e, raramente (nuca kkk), pernas.
 
-*porque não temos mini sumôs com pernas?*  
-Teoricamente é possivel e permitido pelas regras. Apesar de ser muito legal não são adotados por dois motivos principais: Dificuldade de montar e eficiência em relação as rodas consseguem deixar o robô mais baixo e estavel, dificultando que ele seja virado.
+> 🤖 **E por que não vemos robôs com pernas?**  
+> Embora seja permitido pelas regras, robôs com pernas são difíceis de construir e, nas técnicas de combate atuais, têm menor eficiência. Rodas garantem um robô mais **baixo, estável e previsível**, o que é essencial em lutas de sumô.
 
-| Sistema de locomoção |  dificuldade | eficiência | distribuição de masa |
-|----------------------|-----------|------------|------------|
-| 2 rodas com rampa na frente | facil | alta | boa parte do peso vai para as rodas proporcionado tração e o restante ajuda a manter a rampa rente ao chão. |
-| 4 rodas ou duas esteiras com rampa na frente | médio por conta do espaço | alta | Praticamente todo o peso está nas rodas / esteiras resultando em mais tração e consequentemente força, mas acaba sendo pior para rampar pois não tem tanto peso na rampa para deixala rente ao chão. |
-| pernas (hipotético) | alto | médio baixo (tendo em vista as técnicas atuais de combate que envolvem rampar e empurrar) |  |
+---
 
-### 1.2.1 - Sistema de locomoção diferêncial
+## 🔍 Comparativo de sistemas de locomoção
 
-Em robótica o sistema adotado nos sumôs é chamado de diferencial, nele dois conjunto motor e roda identicos são posicionadas de forma simétrica uma oposta a outra. desta forma temos 3 possibilidades de movimentos:
+| Sistema de locomoção                 | Dificuldade | Eficiência | Distribuição de massa e impacto |
+|-------------------------------------|-------------|------------|----------------------------------|
+| **2 rodas com rampa na frente**     | Baixa       | Alta       | Parte do peso vai para as rodas (tração) e o restante mantém a lâmina rente ao chão. Ótimo equilíbrio. |
+| **4 rodas ou 2 esteiras com rampa** | Média       | Alta       | A tração é alta, mas há pouco peso na lâmina — o que pode atrapalhar a rampagem. |
+| **Pernas (hipotético)**             | Alta        | Média-baixa| Pouco estáveis para empurrões diretos, complexas de projetar e controlar. |
 
-1. motores com velocidades iguais e mesmo sentido
-2. motores com velocidades iguais e sentido oposto
-3. motores com velocidades diferentes e mesmo sentido
+---
 
-![Alt text](img/move_1.png)
-![Alt text](img/move_2.png)
+## Sistema de Locomoção Diferencial
 
-Perceba que essa disposição permite que o robo se mova em praticamente todas as direções exceto na diretação das roda, ou seja, um movimento lateral. Isso pode ser atingido com rodas omnidirecionais, mas não existem grandes vantagens no seu uso para sumo, em geral, esse sistema ja é o suficiente e funciona bem.
+O sistema mais utilizado em mini sumôs é o **diferencial**, onde duas rodas independentes são posicionadas simetricamente. Com esse arranjo, o robô consegue:
 
-**Problemas dessa forma de locomoção:** Não da pra ganhar todas! O grande problema desse sistema aparece quando são aplicadas tensões iguais nos motores e ele deveria andar perfeitamente em linha reta mas não é oq acontece. A explicação pra isso se deve a asimetrias entre os dois lados do robô, como pequenas diferenças entre os raios da rodas, diferênças no motores (mesmo que tenha nascido da mesma fabrica um ao lado do outro) e diferenças na distribuição de peso entre as rodas.
+1. Mover-se em linha reta (rodas com mesma velocidade e sentido).
+2. Girar no próprio eixo (rodas com mesma velocidade e sentidos opostos).
+3. Fazer curvas suaves (rodas com velocidades diferentes).
 
-![Alt text](img/loc_problema.png)
+![Movimentos1](../img/move_1.png)
+![Movimentos2](../img/move_2.png)
 
-**Solução para o problema:**
+Esse sistema **não permite movimento lateral**, como em robôs com rodas omnidirecionais — mas isso não é uma limitação no sumô, onde controle frontal é o mais importante.
 
-1. Busque deixar o robô o mais simétrico possivel, de preferencia com motores e rodas do mesmo fabricante e um projeto que não acumule peso muito de um lado só. Não entre em panico se mesmo assim o robô anida estiver curvando, isso ajuda a reduzir o problema mas sempre haveram assimetrias.
-2. Caso o seu robô seja radio controlado isso pode ser compensado no radio, de forma proporcional a velocidade da roda que estiver mais rápida. Com isso ja da pra melhorar bastante o restante é treino do piloto!
-3. Caso o seu robô seja autonomo essa diferença não vai afetar muito o desempenho do robô porque geralmente o sensoriamento compensa essa diferênça. Por exemplo: imagine um robô com dois sensores virados para frente um do lado direito e um do esquerdo. Caso ele enxergue um robô na sua frente com os dois sensores ele se move para frente, no entanto como ele se move um pouco curvo uma hora um dos sensores vai parar de enxergar nesse instante a estratégia deve reduzir a velocidade do lado que esta exergando para curvar e manter o robô no seu campo de visão até que os dois voltam a enxergar e assim continua.
-4. Solução chique: usar um giroscópio e um controlador que mede a diferença entre a rotação desejada e a rotação real, atuando para reduzir a diferênça a zero. (praticamente ninguém usa kkk mas se estiver bem calibrado funciona muuuito bem)
+---
 
-**Um pouco de matemática:**
+### ⚠️ Desafios práticos: "O robô não anda reto!"
 
-Até o momento falei de forma intuitiva sobre o movimento do robô em função das velocidades das rodas. Agora vou ser um pouco mais analítico e apresentar algumas equações — sem me alongar demais. Neste modelo, o movimento é decomposto em velocidade linear de deslocamento ($v$) e rotação ($\omega$):
+Mesmo aplicando sinais idênticos aos motores, é comum o robô desviar levemente. Os motivos principais:
+
+- Diferenças nos motores (mesmo do mesmo lote).
+- Assimetria nos pneus (desgaste ou tamanho).
+- Distribuição de massa desequilibrada.
+
+![Problema de desvio](../img/loc_problema.png)
+
+---
+
+### ✅ Soluções possíveis e boas práticas:
+
+1. **Construa um robô simétrico:** use motores e rodas iguais, e distribua bem o peso, tente deixa-lo o mais simétrico possivel  
+
+2. **Correção no rádio (modo RC):**  
+   Ajuste a curva de resposta ou aplique um fator de correção proporcional ao desvio. Isso ajuda bastante — o resto é **treino do piloto**!
+
+3. **Compensação via sensores (modo autônomo):**  
+   Estratégias bem projetadas ajustam as velocidades com base no sensor que está enxergando o oponente. Exemplo:
+   - Se os dois sensores veem o inimigo → vá reto.
+   - Se só um vê → reduza o lado correspondente até reequilibrar.
+
+4. **Correção com giroscópio (nível avançado):**  
+   Use um sensor de rotação (giroscópio) com controle PID (ou outros) para manter o ângulo.  
+   > 💡 Pouco comum em sumôs, mas muito eficiente quando bem calibrado.
+
+---
+
+## 📐 Modelagem Cinemática
+
+Vamos agora entender de forma analítica como o movimento do robô depende das velocidades das rodas (**cinemática direta**).
+
+No modelo diferencial, o movimento do robô pode ser decomposto em:
+
+- **Velocidade linear**: $v$  
+- **Velocidade angular (rotação)**: $\omega$
+
+> 🔎 *Cinemática direta* descreve o **movimento resultante** do robô ($v$ e $\omega$) a partir das velocidades aplicadas nas rodas ($v_L$ e $v_R$).
+
+As equações da **cinemática direta** são:
+
 
 $$
-v = \frac{v_R+v_L}{2}
+v = \frac{v_R + v_L}{2}
 $$
 
 $$
-\omega = \frac{v_R-v_L}{l}
+\omega = \frac{v_R - v_L}{l}
 $$
 
-Onde:  
-$v_L$ - Velocidade da roda esquerda em m/s.  
-$v_R$ - Velocidade da roda direita em m/s.  
-$v$ - velocidade linear (tangente à trajetória) em m/s  
-$l$ - distancia entre as rodas em metros  
-$\omega$ - velocidade angular (rotação em torno do centro entre as rodas) em rad/s  
+**Onde:**
 
-Essas equações descrevem a oque é chamado em robótica de modelagem cinemática direta do robô, ou seja, elas decrevem o movimento final do robô em função do movimento dos atuadores, que reste caso são os motores das rodas.
+- $v_L$, $v_R$: velocidades da roda esquerda e direita (em m/s)  
+- $v$: velocidade linear do robô  
+- $\omega$: velocidade angular (rad/s)  
+- $l$: distância entre as rodas (em m)
 
-Vamos testar essas equações:
+---
 
-1. se tiver uma velocidade de $1m/s$ nas duas rodas e $l=0,01\text{m}$:
+### 🧪 Exemplos:
 
-$$
-v = \frac{1+1}{2} = 1\text{ m/s}
-$$
+1. **Ambas as rodas a 1 m/s e $l = 0{,}01$ m:**
 
 $$
-\omega = \frac{1-1}{l} = 0\text{ rad/s}
+v = \frac{1 + 1}{2} = 1 \text{ m/s} \\
+\omega = \frac{1 - 1}{0{,}01} = 0 \text{ rad/s}
 $$
 
-**ou seja:** o robô de move em linha reta para frente porque $v=1m/s$ positivo e sem fazer curva ja que $\omega = 0$
+➡️ O robô anda em linha reta para frente.
 
-2. se tiver uma velocidade de $1m/s$ na roda direita e $-1m/s$ na esquerda com $l=0,01\text{m}$:
+---
 
-$$
-v = \frac{1-1}{2} = 0 \text{ m/s}
-$$
+2. **Roda direita a 1 m/s e esquerda a -1 m/s:**
 
 $$
-\omega = \frac{1-(-1)}{0,01} = 200\text{ rad/s} \approx 1910 \text{ RPM}
+v = \frac{1 + (-1)}{2} = 0 \text{ m/s} \\
+\omega = \frac{1 - (-1)}{0{,}01} = 200 \text{ rad/s} \approx 1910 \text{ RPM}
 $$
 
-**ou seja:** o robô se rotaciona em torno do próprio eixo mas sem deslocamento.
+➡️ O robô gira no próprio eixo, sem se deslocar.
 
-Em resumo as equações descrevem bem o movimento esperado do robô em função das velocidades das rodas, mas não representam as imprefeições de montagem do robô, tenha isso em mente.  
+---
 
-Essas equações são uteis na mixagem do robô caso precise fazer. Ou caso queira se aprofundar no sistema de controle de movimentação do robô.
+### 📌 Conclusão:
 
-[Mais sobre modelagem cinemática de robôs diferenciais](https://www.cs.columbia.edu/~allen/F17/NOTES/icckinematics.pdf)
+As equações explicam bem o **movimento ideal** do robô, mas **não modelam imperfeições** como atrito desigual, folgas ou diferenças de motor.  
+Mesmo assim, são **fundamentais para controle**, e ajudam a entender a mixagem de canais.
+
+🔗 [Mais sobre modelagem cinemática de robôs diferenciais](https://www.cs.columbia.edu/~allen/F17/NOTES/icckinematics.pdf)
