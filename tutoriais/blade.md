@@ -94,7 +94,11 @@ Esse impasse pode resultar em:
 
 Escapar de uma rampagem é possível — mas nem sempre fácil. Em geral, a **velocidade**, **manobrabilidade** e **tempo de resposta** são seus maiores aliados. Abaixo, estratégias práticas para cada tipo:
 
----
+<p  align="center">
+  <img src="../img/rampagem_escapando1.gif" alt="Descrição da imagem" width="550"/>
+  <BR>
+  O mesmo em velocidade normal.
+</p>
 
 ### 🔙 Caso (1) — Rampagem por trás
 
@@ -104,14 +108,11 @@ Escapar de uma rampagem é possível — mas nem sempre fácil. Em geral, a **ve
 - Mas atenção: o contato pode levantar suas rodas do chão, anulando sua tração e capacidade de moviemntação;
 - Robôs autônomos raramente têm sensores traseiros, então podem tentar adotar movimentos evasivos programados.
 
----
-
 ### ↩️ Caso (2) — Rampagem lateral
 
 Ainda há chance de resposta:
 
 - Avançar em diagonal oposta ao atacante ou girar no sentido contrário ao empurrão pode ser a chave para escapar da rampa.
----
 
 ### ⚔️ Caso (3-b) — Rampa contra rampa (travada)
 
