@@ -10,7 +10,7 @@ Vamos analisar o equilíbrio dinâmico do robô considerando que ele anda em lin
 
 ![Equilíbrio dinâmico](../img/DLC.png)
 
-As equações básicas são:
+As equações básicas são:  
 
 $$
 mg = N_{\text{rodas}} + N_{\text{lâmina}} \tag{1}
@@ -64,9 +64,9 @@ Quando o robô está acelerando ($a \ne 0$), a distribuição muda dinamicamente
 
 2. A equação (3) também nos ajuda a entender **quando o robô empina**. Se $N_{\text{lâmina}} = 0$, significa que a lâmina perdeu contato com o chão — ou seja, o robô empinou.
 
-   $$
-   mgx_{\text{CM}} = ma_{\text{limite}} z_{\text{CM}} \Rightarrow a_{\text{limite}} = g \cdot \frac{x_{\text{CM}}}{z_{\text{CM}}}
-   $$
+$$
+mgx_{\text{CM}} = ma_{\text{limite}} z_{\text{CM}} \Rightarrow a_{\text{limite}} = g \cdot \frac{x_{\text{CM}}}{z_{\text{CM}}}
+$$
 
 Ou seja:  
 👉 Quanto **menor a altura do centro de massa** ($z_{\text{CM}}$), **maior será a aceleração máxima permitida antes de empinar**. Ou seja, **centro de massa baixo = robô mais estável**.  
@@ -188,7 +188,7 @@ Outro ponto é que o chassi impresso sozinho **geralmente não atinge o peso da 
 ### 📌 Resumo
 
 - Um bom chassi é **baixo, rígido e bem balanceado**.
-- Reduzir o **\( z_{\text{CM}} \)** (altura) e manter o **\( x_{\text{CM}} \)** próximo à lâmina aumenta o desempenho e previne empinamentos.
+- Reduzir o **$z_{\text{CM}}$** (altura) e manter o **$x_{\text{CM}}$** próximo à lâmina aumenta o desempenho e previne empinamentos.
 - A estrutura e a distribuição de massa andam lado a lado na performance do robô.
 
 💡 Dica: experimente combinar materiais — como base metálica + estrutura impressa — para o melhor dos dois mundos: desempenho e flexibilidade.
