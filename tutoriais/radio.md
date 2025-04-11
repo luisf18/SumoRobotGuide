@@ -64,6 +64,8 @@ Modifiquei rádios comerciais colocando um ESP no lugar da controladora:
 
 ![Radios ESPNOW](../img/ESPNOW_radios.png)
 
+![Radios ESPNOW](../img/radio_connected.gif)
+
 Se você **não quer montar um rádio do zero**, dá pra adaptar o seu com um **conversor PPM → ESPNOW**, conectado na porta **Trainer** do rádio ou até internamente. Já utilizei essa estratégia com uma plaquinha compacta que projetei, e funciona muito bem!
 
 ![Conversor externo](../img/ESPNOW_radio_conversor.png)  

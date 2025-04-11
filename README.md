@@ -6,10 +6,32 @@ Um guia para começar da melhor forma nas competições de sumô de robôs.
 *Então você quer começar a montar robôs de sumo né? Ótima escolha!*
 
 ## 🔗 Outros tópicos disponíveis
+
+### 📚 Capítulos
+
+- [Força](./tutoriais/force.md)
+- [Laminas e Rampagem](./tutoriais/blade.md)
+- [Rodas](./tutoriais/wheels.md)
+- [Baterias](./tutoriais/power.md)
+- [Rádio comunicação](./tutoriais/radio.md)
+
+### 🚧 Capítulos em desenvolvimento
+
+- [Controle do Juiz](./tutoriais/ir_remote.md)
+- [Motores e seus drivers](./tutoriais/motors.md)
+- [Estratégias](./tutoriais/strategy.md)
+- [Estrutura](./tutoriais/struct.md)
+- [Sensores](./tutoriais/sensors.md)
+- [Sistema de locomoção e cinemática](./tutoriais/kinematics.md)
+
+### Outros
 - 🛒 [Lojas recomendadas](./lojas.md)
 - 💻 [Aplicativos](./apps.md)
 
-## Super Resumo das regras
+
+## Introdução
+
+### Super Resumo das regras
 
 No sumô de robôs dois robôs disputam em uma arena circular chamada **Dohyo** com o objetivo de empurrar o adversário para fora. As disputas ocorrem em até 3 **rounds**, sendo o terceiro um desempate caso cada um esteja com um ponto. Vence o robô que obtiver 2 pontos de **Yuko**. Essa pontuação também pode ser obtida caso o adiversário cometa alguma infração (mais detalhes nas regras).
 
@@ -17,7 +39,7 @@ Regra mais atual em atividade no brasil:
 [Regra2023](./Regras/Regras+-+Sumo_2023_RSM.pdf)  
 **Fonte:** Site Robocore
 
-## Categorias de sumô
+### Categorias de sumô
 
 As categorias de sumô são divididas por peso e dimenssões limite, e podem ser subdivididas em autônomo (**Auto**) ou rádio controlado (**RC**).
 
@@ -31,13 +53,13 @@ As categorias de sumô são divididas por peso e dimenssões limite, e podem ser
 
 ![Alt text](img/categorias.png)
 
-## Videos de demonstração
+### Videos de demonstração
 
 **obs:** esse video não esta acelerado :P  
 [![Assista no YouTube](https://img.youtube.com/vi/tBy5Q2gKjaw/hqdefault.jpg)](https://www.youtube.com/watch?v=tBy5Q2gKjaw)
 
 
-## Glossário
+### Glossário
 
 O sumô de robôs surgiu no japão então a maioria dos termos são em japones, vou destacar aqui os principais.
 
@@ -50,14 +72,10 @@ O sumô de robôs surgiu no japão então a maioria dos termos são em japones, 
 ![Alt text](img/Dohyo.png)
 
 
-## 1 - Mini Sumô
+### Aspectos gerais
 
 > ⚠️ Aviso:  
 > Esta seção foca um pouco mais na categoria **mini sumô**, pois é onde tenho mais experiência prática. No entanto, boa parte dos conceitos e estratégias também se aplicam às outras categorias — com exceção de alguns pontos específicos do **Mega Sumô**, que usa **ímãs**, alterando drasticamente sua dinâmica.
-
----
-
-### 1.X - Aspectos gerais
 
 No sumô, o objetivo é: **empurrar o adversário para fora da arena**. Mas a forma de alcançar isso varia bastante, e é aí que a coisa fica interessante!
 
@@ -76,9 +94,11 @@ Abaixo estão os principais aspectos que moldam um bom robô de sumô:
 
 ---
 
-### 1.1 - Principais sistemas e peças
+### Principais sistemas e peças
 
 Aqui estão os principais conjuntos de peças que compõem um robô de sumô. A ideia é ser o mais generalista possível, cobrindo os formatos mais comuns — mas é sempre ótimo quando surgem designs fora do padrão (sinal de que a categoria está viva e inovando!).
+
+![](img/parts.png)
 
 - **Sistema de locomoção:**  
   Responsável pelo movimento do robô. Inclui rodas, motores, e os circuitos que controlam esses motores (como ESCs ou pontes H).
@@ -101,22 +121,8 @@ Aqui estão os principais conjuntos de peças que compõem um robô de sumô. A 
 - **Receptor de rádio:**  
   Responsável por receber os sinais do rádio controle no caso de robôs RC.
 
----
+Esemplo prático:
 
-### 📚 Capítulos
 
-- [Força](./tutoriais/force.md)
-- [Laminas e Rampagem](./tutoriais/blade.md)
-- [Rodas](./tutoriais/wheels.md)
-- [Baterias](./tutoriais/power.md)
-- [Rádio comunicação](./tutoriais/radio.md)
 
 ---
-
-### 🚧 Capítulos em desenvolvimento
-
-- [Motores e seus drivers](./tutoriais/motors.md)
-- [Estratégias](./tutoriais/strategy.md)
-- [Estrutura](./tutoriais/struct.md)
-- [Sensores](./tutoriais/sensors.md)
-- [Sistema de locomoção e cinemática](./tutoriais/kinematics.md)
