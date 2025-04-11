@@ -38,7 +38,11 @@ Um guia para começar da melhor forma nas competições de sumô de robôs.
 
 No sumô de robôs dois robôs disputam em uma arena circular chamada **Dohyo** com o objetivo de empurrar o adversário para fora. As disputas ocorrem em até 3 **rounds**, sendo o terceiro um desempate caso cada um esteja com um ponto. Vence o robô que obtiver 2 pontos de **Yuko**. Essa pontuação também pode ser obtida caso o adiversário cometa alguma infração (mais detalhes nas regras).
 
-Regra mais atual em atividade no brasil:
+> ⚠️ Aviso: O robô que perde é o primeiro a encostar no chão fora do dohyo, não o primeiro a sair.
+
+![Alt text](img/ponto_yuko.png)
+
+Regra mais atual em atividade no Brasil:
 [Regra2023](./Regras/Regras+-+Sumo_2023_RSM.pdf)  
 **Fonte:** Site Robocore
 
@@ -59,7 +63,7 @@ As categorias de sumô são divididas por peso e dimenssões limite, e podem ser
 ### Videos de demonstração
 
 [Mega Sumo](https://www.youtube.com/watch?v=La-zTFcv1Tk)  
-**obs:** esse video não esta acelerado :P  
+**obs:** esse video não está acelerado :P  
 
 <p  align="center">
   <img src="img/MegaSumo_demo.gif" alt="Descrição da imagem" width="550"/>
