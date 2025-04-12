@@ -18,11 +18,11 @@ Um guia para quem quer entrar no mundo das competições de **robôs de sumô** 
 - [Rodas](./tutoriais/wheels.md)
 - [Baterias](./tutoriais/power.md)
 - [Rádio comunicação](./tutoriais/radio.md)
+- [Acionamento do robô Autonomo (Controle do Juiz)](./tutoriais/ir_remote.md)
 
 
 ### 🚧 Capítulos em desenvolvimento
 
-- [Controle do Juiz (Acionamento do robô Autonomo)](./tutoriais/ir_remote.md)
 - [Motores e seus drivers](./tutoriais/motors.md)
 - [Estratégias](./tutoriais/strategy.md)
 - [Sensores](./tutoriais/sensors.md)

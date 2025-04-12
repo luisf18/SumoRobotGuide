@@ -18,7 +18,7 @@ Com isso, os dois robôs iniciam **ao mesmo tempo** e assim que o juiz pressiona
 
 O controle utilizado deve seguir o **protocolo SONY**. Esse protocolo define como os dados são codificados e enviados por meio de **pulsos de luz infravermelha**, geralmente a 38 kHz.
 
-![protocolo sony](../img/SONY.png)
+[![protocolo sony](../img/sony_protocol.png)](https://www.sbprojects.net/knowledge/ir/sirc.php)
 
 Apenas **três teclas** do controle são utilizadas nas competições:
 
@@ -42,27 +42,32 @@ Você **vai precisar de um** para testar seu robô!
 - Procure por **controles de TV da Sony**, ou aproveite algum controle antigo.  
 - Também existem modelos dedicados ao sumô, com **múltiplos emissores**, que ajudam a atingir os dois robôs com maior consistência.
 
-![controle SONY](../img/sony_control.png)  
-![controle 3 emissores](../img/controle_multi.png)
+![controle SONY](../img/controle_SONY.png)  
+
+![controle 3 emissores](https://www.jsumo.com/microstart-remote-2802-10-B.jpg)
 
 ### Outros modelos usados em competições:
 
 Alguns torneios usam controles em formato de **pistola com laser**, permitindo que cada operador aponte diretamente para seu robô. O juiz ativa todos simultaneamente.
 
-![controle pistola](../img/controle_pistola.png)
+![controle pistola](../img/controle_IR_pistola_zoom.png)  
+[Live All Japan Robot Sumo Tournament 2024](https://www.youtube.com/watch?v=T1lq8TOFk6A)
 
 ---
 
 ## 📥 Receptor infravermelho
 
-Você pode:
+Existem duas opções.
 
-### 1. Usar um **módulo pronto**, como:
-
-- 🔌 [Módulo START da JSUMO](../img/jsumo_start.png)  
-- 🦊 [Módulo IR da Fox Dynamics](../img/fox_start.png)
+### 1. Usar um **módulo pronto**
 
 Eles já fazem a **decodificação do sinal SONY** e fornecem uma **saída digital** (HIGH ou LOW) simples para o microcontrolador.
+
+1. [Módulo JSUMO](https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module)
+![Módulo START da JSUMO](https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module-495-15-B.jpg)    
+
+2. [Módulo IR da Fox Dynamics](https://www.instagram.com/foxdynamicsteam)  
+![Modulo IR Fox](../img/modulo_ir.png)
 
 ---
 
