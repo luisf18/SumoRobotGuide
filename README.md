@@ -9,7 +9,7 @@ Um guia para quem quer entrar no mundo das competições de **robôs de sumô** 
 
 ## 🔗 Aqui você vai encontrar:
 
-### 📚 Conteúdos em capitulos:
+### 📚 Conteúdos em capítulos:
 
 - [Força](./tutoriais/force.md)
 - [Laminas e Rampagem](./tutoriais/blade.md)
@@ -24,14 +24,16 @@ Um guia para quem quer entrar no mundo das competições de **robôs de sumô** 
 ### 🚧 Capítulos em desenvolvimento
 
 - [Motores e seus drivers](./tutoriais/motors.md)
-- [Estratégias](./tutoriais/strategy.md)
 - [Sensores](./tutoriais/sensors.md)
+- [Estratégias](./tutoriais/strategy.md)
 
 ### Outros
 - 🛒 [Lojas recomendadas](./lojas.md)
 - 💻 [Aplicativos](./apps.md)
 - 📖 [Artigos academicos](./tutoriais/articles.md)
 
+> ⚠️ Aviso:  
+> Neste guia vou acabar focando mais na categoria **mini sumô**, pois é onde tenho mais experiência prática. No entanto, boa parte dos conceitos e estratégias também se aplicam às outras categorias — com exceção de alguns pontos específicos do **Mega Sumô**, que usa **ímãs**, alterando drasticamente sua dinâmica.
 
 ## Introdução
 
@@ -89,9 +91,6 @@ O sumô de robôs surgiu no japão então a maioria dos termos são em japones, 
 
 
 ### Aspectos gerais
-
-> ⚠️ Aviso:  
-> Esta seção foca um pouco mais na categoria **mini sumô**, pois é onde tenho mais experiência prática. No entanto, boa parte dos conceitos e estratégias também se aplicam às outras categorias — com exceção de alguns pontos específicos do **Mega Sumô**, que usa **ímãs**, alterando drasticamente sua dinâmica.
 
 No sumô, o objetivo é: **empurrar o adversário para fora da arena**. Mas a forma de alcançar isso varia bastante, e é aí que a coisa fica interessante!
 

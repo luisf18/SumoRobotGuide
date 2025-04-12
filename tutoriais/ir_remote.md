@@ -82,7 +82,14 @@ Se você tiver experiência com programação de microcontroladores em baixo niv
 
 ![exemplo de montagem](../img/montagem_ir.png)  
 
-[exemplo de codigo]
+
+### 🎥 Tutorial: Acionamento com receptor IR discreto (sem módulos prontos)
+
+🧑🏼‍💻 Tutorial em português ensinando como fazer o acionamento do robô com receptor IR discreto, sem depender de módulos prontos.
+
+[![Tutorial acionamento IR discreto](https://img.youtube.com/vi/KCCid1gqAXQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=KCCid1gqAXQ)
+
+
 
 ---
 
