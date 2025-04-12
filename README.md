@@ -3,13 +3,13 @@
 
 # SumoRobotGuide
 
-Um guia para começar da melhor forma nas competições de sumô de robôs.
+Um guia para quem quer entrar no mundo das competições de **robôs de sumô** com o pé direito.
 
-*Então você quer começar a montar robôs de sumô né? Ótima escolha!*
+*Então você decidiu montar um robô de sumô? Excelente escolha! Siga esse guia para começar a empurrar robôs para fora da arena!*
 
-## 🔗 Outros tópicos disponíveis
+## 🔗 Aqui você vai encontrar:
 
-### 📚 Capítulos
+### 📚 Conteúdos em capitulos:
 
 - [Força](./tutoriais/force.md)
 - [Laminas e Rampagem](./tutoriais/blade.md)
@@ -22,7 +22,7 @@ Um guia para começar da melhor forma nas competições de sumô de robôs.
 
 ### 🚧 Capítulos em desenvolvimento
 
-- [Controle do Juiz](./tutoriais/ir_remote.md)
+- [Controle do Juiz (Acionamento do robô Autonomo)](./tutoriais/ir_remote.md)
 - [Motores e seus drivers](./tutoriais/motors.md)
 - [Estratégias](./tutoriais/strategy.md)
 - [Sensores](./tutoriais/sensors.md)
@@ -137,4 +137,6 @@ Aqui estão os principais conjuntos de peças que compõem um robô de sumô. A 
 - **Receptor de rádio:**  
   Responsável por receber os sinais do rádio controle no caso de robôs RC.
 
----
+<p align="center">
+  <img src="img/LogoFox.png" alt="Logo" width="200px">
+</p>
